@@ -1,5 +1,7 @@
 package entities;
 
+import org.json.JSONObject;
+
 public class Session {
 	private String gameID;
 	private String server;
@@ -8,6 +10,9 @@ public class Session {
 	private int numPlayers;
 	private int time;
 	
+	public Session() {
+	}
+	
 	public Session(String id, String s, String g, int c, int n, int t) {
 		this.gameID = id;
 		this.server = s;
@@ -15,6 +20,14 @@ public class Session {
 		this.circlePos = c;
 		this.numPlayers = n;
 		this.time = t;
+	}
+	
+	public void fromJson(JSONObject json) {
+	    try {
+	    	this.setValues(json.getString("gameID"), json.getString("server"), json.getString("gameType"), json.getInt("circlePos"), json.getInt("numPlayers"), json.getInt("time"));
+	    } catch (Exception ex) {
+	    	ex.printStackTrace();
+	    }
 	}
 	
 	public void setValues(String id, String s, String g, int c, int n, int t) {
