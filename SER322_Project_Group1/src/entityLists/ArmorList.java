@@ -1,24 +1,24 @@
 package entityLists;
 
-import entities.Ammo;
+import entities.Armor;
 import java.util.LinkedList;
 import java.io.*;
 import org.json.*;
 
-public class AmmoList {
-	private final String filename = "ammo.json";
-	private LinkedList<Ammo> list = new LinkedList<>();
+public class ArmorList {
+	private final String filename = "armor.json";
+	private LinkedList<Armor> list = new LinkedList<>();
 	
-	public AmmoList() {
+	public ArmorList() {
 		try {
             FileInputStream in = new FileInputStream(filename);
             JSONObject obj = new JSONObject(new JSONTokener(in));
             String [] names = JSONObject.getNames(obj);
             for (int i = 0; i < names.length; ++i) {
                 if (!names[i].equals("")) {
-                    Ammo ammo = new Ammo();
-                    ammo.fromJson((JSONObject)obj.getJSONObject(names[i]));
-                    list.add(ammo);
+                    Armor armor = new Armor();
+                    armor.fromJson((JSONObject)obj.getJSONObject(names[i]));
+                    list.add(armor);
                 }
             }
             in.close();
@@ -27,7 +27,7 @@ public class AmmoList {
         }
 	}
 	
-	public LinkedList<Ammo> getList() {
+	public LinkedList<Armor> getList() {
 		return list;
 	}
 	
@@ -36,8 +36,10 @@ public class AmmoList {
         for (int i = 0; i < list.size(); ++i) {
             JSONObject oneJson = new JSONObject();
             oneJson.put("name", list.get(i).getName());
-            oneJson.put("type", list.get(i).getType());
-            oneJson.put("quantity", list.get(i).getQuantity());
+            oneJson.put("slot", list.get(i).getSlot());
+            oneJson.put("durability", list.get(i).getDurability());
+            oneJson.put("rating", list.get(i).getRating());
+            oneJson.put("tier", list.get(i).getTier());
             groupJson.put(list.get(i).getName(), oneJson);
         }
         

@@ -3,6 +3,10 @@ package entities;
 public class Item {
 	private String name;
 	
+	public Item() {
+		
+	}
+	
 	public Item(String n) {
 		this.name= n;
 	}
