@@ -1,13 +1,10 @@
 package main;
-
-import java.util.LinkedList;
-
 import entityLists.*;
 
 public class Global {
 	public static AmmoList ammoList = new AmmoList();
 	public static ArmorList armorList = new ArmorList();
-	public static BackpackList backpackList = new BackPackList();
+	public static BackpackList backpackList = new BackpackList();
 	public static BoosterList boosterList = new BoosterList();
 	public static ClothingList clothingList = new ClothingList();
 	public static HealingItemList healingItemList = new HealingItemList();
@@ -16,7 +13,7 @@ public class Global {
 	public static PlayerList playerList = new PlayerList();
 	public static SessionList sessionList = new SessionList();
 	public static StandardList standardList = new StandardList();
-	public static ThowAbleList throwAbleList = new ThrowAbleList();
+	public static ThrowAbleList throwAbleList = new ThrowAbleList();
 	public static VehicleList vehicleList = new VehicleList();
 	public static WeaponList weaponList = new WeaponList();
 	
