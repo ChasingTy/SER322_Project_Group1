@@ -20,7 +20,7 @@ public class Ammo extends Item {
 		return type;
 	}
 	
-	public int getQuatity() {
+	public int getQuantity() {
 		return quantity;
 	}
 }

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import entityLists.*;
 
 public class Global {
-	public static AmmoList ammoList = new AmmoList("ammo.json");
+	public static AmmoList ammoList = new AmmoList();
 	public static ArmorList armorList = new ArmorList("armor.json");
 	public static BackpackList backpackList = new BackPackList("backpack.json");
 	public static BoosterList boosterList = new BoosterList("booster.json");
