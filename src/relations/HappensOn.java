@@ -38,7 +38,7 @@ public class HappensOn {
 		this.session = s;
 	}
 	
-	public Map getPlayer() {
+	public Map getMap() {
 		return map;
 	}
 	

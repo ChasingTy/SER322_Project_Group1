@@ -1,24 +1,24 @@
 package relationLists;
 
-import relations.HappensOn;
+import relations.SpawnsOnVehicle;
 import java.util.LinkedList;
 import java.io.*;
 import org.json.*;
 
-public class HappensOnList {
-	private final String filename = "happensOn.json";
-	private LinkedList<HappensOn> list = new LinkedList<>();
+public class SpawnsOnVehicleList {
+	private final String filename = "spawnsOnVehicle.json";
+	private LinkedList<SpawnsOnVehicle> list = new LinkedList<>();
 	
-	public HappensOnList() {
+	public SpawnsOnVehicleList() {
 		try {
             FileInputStream in = new FileInputStream(filename);
             JSONObject obj = new JSONObject(new JSONTokener(in));
             String [] names = JSONObject.getNames(obj);
             for (int i = 0; i < names.length; ++i) {
                 if (!names[i].equals("")) {
-                    HappensOn happensOn = new HappensOn();
-                    happensOn.fromJson((JSONObject)obj.getJSONObject(names[i]));
-                    list.add(happensOn);
+                    SpawnsOnVehicle spawnsOnVehicle = new SpawnsOnVehicle();
+                    spawnsOnVehicle.fromJson((JSONObject)obj.getJSONObject(names[i]));
+                    list.add(spawnsOnVehicle);
                 }
             }
             in.close();
@@ -27,7 +27,7 @@ public class HappensOnList {
         }
 	}
 	
-	public LinkedList<HappensOn> getList() {
+	public LinkedList<SpawnsOnVehicle> getList() {
 		return list;
 	}
 	
@@ -35,9 +35,9 @@ public class HappensOnList {
 		JSONObject groupJson = new JSONObject();
         for (int i = 0; i < list.size(); ++i) {
             JSONObject oneJson = new JSONObject();
+            oneJson.put("vehicle", list.get(i).getVehicle().toJSON());
             oneJson.put("map", list.get(i).getMap().toJSON());
-            oneJson.put("session", list.get(i).getSession().toJSON());
-            groupJson.put(list.get(i).getSession().getGameID(), oneJson);
+            groupJson.put(list.get(i).getVehicle().getName(), oneJson);
         }
         
         PrintWriter out;

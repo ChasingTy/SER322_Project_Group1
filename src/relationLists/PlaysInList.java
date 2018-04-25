@@ -1,24 +1,24 @@
 package relationLists;
 
-import relations.HappensOn;
+import relations.PlaysIn;
 import java.util.LinkedList;
 import java.io.*;
 import org.json.*;
 
-public class HappensOnList {
-	private final String filename = "happensOn.json";
-	private LinkedList<HappensOn> list = new LinkedList<>();
+public class PlaysInList {
+	private final String filename = "playsIn.json";
+	private LinkedList<PlaysIn> list = new LinkedList<>();
 	
-	public HappensOnList() {
+	public PlaysInList() {
 		try {
             FileInputStream in = new FileInputStream(filename);
             JSONObject obj = new JSONObject(new JSONTokener(in));
             String [] names = JSONObject.getNames(obj);
             for (int i = 0; i < names.length; ++i) {
                 if (!names[i].equals("")) {
-                    HappensOn happensOn = new HappensOn();
-                    happensOn.fromJson((JSONObject)obj.getJSONObject(names[i]));
-                    list.add(happensOn);
+                    PlaysIn playsIn = new PlaysIn();
+                    playsIn.fromJson((JSONObject)obj.getJSONObject(names[i]));
+                    list.add(playsIn);
                 }
             }
             in.close();
@@ -27,7 +27,7 @@ public class HappensOnList {
         }
 	}
 	
-	public LinkedList<HappensOn> getList() {
+	public LinkedList<PlaysIn> getList() {
 		return list;
 	}
 	
@@ -35,9 +35,9 @@ public class HappensOnList {
 		JSONObject groupJson = new JSONObject();
         for (int i = 0; i < list.size(); ++i) {
             JSONObject oneJson = new JSONObject();
-            oneJson.put("map", list.get(i).getMap().toJSON());
+            oneJson.put("player", list.get(i).getPlayer().toJSON());
             oneJson.put("session", list.get(i).getSession().toJSON());
-            groupJson.put(list.get(i).getSession().getGameID(), oneJson);
+            groupJson.put(list.get(i).getPlayer().getName(), oneJson);
         }
         
         PrintWriter out;

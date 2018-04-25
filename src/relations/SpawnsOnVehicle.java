@@ -38,7 +38,7 @@ public class SpawnsOnVehicle {
 		this.map = m;
 	}
 	
-	public Vehicle getItem() {
+	public Vehicle getVehicle() {
 		return vehicle;
 	}
 	
