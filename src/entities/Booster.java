@@ -15,6 +15,14 @@ public class Booster extends HealingItem {
 		this.energy = e;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.getName());
+		json.put("health", this.health);
+		json.put("energy", this.energy);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getInt("health"), json.getInt("energy"));

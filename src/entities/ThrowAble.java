@@ -17,6 +17,15 @@ public class ThrowAble extends Item {
 		this.quantity = q;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.getName());
+		json.put("type", this.type);
+		json.put("damage", this.damage);
+		json.put("quantity", this.quantity);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getString("type"), json.getInt("damage"), json.getInt("quantity"));

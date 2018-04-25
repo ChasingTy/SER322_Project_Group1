@@ -1,5 +1,6 @@
 package main;
 import entityLists.*;
+import relationLists.*;
 
 public class Global {
 	public static AmmoList ammoList = new AmmoList();
@@ -16,5 +17,11 @@ public class Global {
 	public static ThrowAbleList throwAbleList = new ThrowAbleList();
 	public static VehicleList vehicleList = new VehicleList();
 	public static WeaponList weaponList = new WeaponList();
+	
+	public static HappensOnList happensOnList = new HappensOnList();
+	public static HasList hasList = new HasList();
+	public static PlaysInList playsInList = new PlaysInList();
+	public static SpawnsOnItemList spawnsOnItemList = new SpawnsOnItemList();
+	public static SpawnsOnVehicleList spawnsOnVehicleList = new SpawnsOnVehicleList();
 	
 }
