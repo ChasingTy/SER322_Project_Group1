@@ -13,6 +13,13 @@ public class Backpack extends Item {
 		this.capacity = c;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.getName());
+		json.put("capacity", this.capacity);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getInt("capacity"));

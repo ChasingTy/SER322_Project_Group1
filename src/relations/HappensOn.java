@@ -16,14 +16,6 @@ public class HappensOn {
 		this.session = s;
 	}
 	
-	public void fromJson(JSONObject json) {
-	    try {
-	    	//this.setValues(json.getJSONObject("map"), json.getJSONObject("session"));
-	    } catch (Exception ex) {
-	    	ex.printStackTrace();
-	    }
-	}
-	
 	public void setValues(Map m, Session s) {
 		this.map = m;
 		this.session = s;

@@ -22,6 +22,17 @@ public class Session {
 		this.time = t;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("gameID", this.gameID);
+		json.put("server", this.server);
+		json.put("gameType", this.gameType);
+		json.put("circlePos", this.circlePos);
+		json.put("numPlayer", this.numPlayers);
+		json.put("time", this.time);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("gameID"), json.getString("server"), json.getString("gameType"), json.getInt("circlePos"), json.getInt("numPlayers"), json.getInt("time"));
