@@ -22,6 +22,18 @@ public class Weapon extends Item {
 		this.maxMagCapacity = m;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.getName());
+		json.put("type", this.type);
+		json.put("bulletSpeed", this.bulletSpeed);
+		json.put("fireRate", this.fireRate);
+		json.put("damage", this.damage);
+		json.put("currentMagCapacity", this.currentMagCapacity);
+		json.put("maxMagCapacity", this.maxMagCapacity);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getString("type"), json.getDouble("bulletSpeed"), json.getInt("fireRate"), json.getInt("damage"), json.getInt("currentMagCapacity"), json.getInt("maxMagCapacity"));

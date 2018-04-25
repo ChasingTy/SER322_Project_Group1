@@ -17,6 +17,15 @@ public class Vehicle {
 		this.topSpeed = t;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.name);
+		json.put("health", this.health);
+		json.put("numSeats", this.numSeats);
+		json.put("topSpeeds", this.topSpeed);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getInt("health"), json.getInt("numSeats"), json.getInt("topSpeed"));

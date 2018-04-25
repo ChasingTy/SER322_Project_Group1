@@ -19,6 +19,16 @@ public class Armor extends Item {
 		this.tier = t;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.getName());
+		json.put("slot", this.slot);
+		json.put("durability", this.durability);
+		json.put("rating", this.rating);
+		json.put("tier", this.tier);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getString("slot"), json.getInt("durability"), json.getInt("rating"), json.getInt("tier"));

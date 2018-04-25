@@ -17,6 +17,15 @@ public class Player {
 		this.energy = e;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.name);
+		json.put("gender", this.gender);
+		json.put("health", this.health);
+		json.put("energy", this.energy);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getString("gender"), json.getInt("health"), json.getInt("energy"));

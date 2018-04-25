@@ -13,6 +13,13 @@ public class Clothing extends Item {
 		this.slot = s;
 	}
 	
+	public JSONObject toJSON() {
+		JSONObject json = new JSONObject();
+		json.put("name", this.getName());
+		json.put("slot", this.slot);
+		return json;
+	}
+	
 	public void fromJson(JSONObject json) {
 	    try {
 	    	this.setValues(json.getString("name"), json.getString("slot"));
