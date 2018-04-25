@@ -7,10 +7,10 @@ public class HappensOn {
 	private Map map;
 	private Session session;
 	
-	HappensOn() {
+	public HappensOn() {
 	}
 	
-	HappensOn(Map m, Session s) {
+	public HappensOn(Map m, Session s) {
 		this.map = m;
 		this.session = s;
 	}

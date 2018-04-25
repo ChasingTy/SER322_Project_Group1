@@ -7,10 +7,10 @@ public class PlaysIn {
 	private Player player;
 	private Session session;
 	
-	PlaysIn() {
+	public PlaysIn() {
 	}
 	
-	PlaysIn(Player p, Session s) {
+	public PlaysIn(Player p, Session s) {
 		this.player = p;
 		this.session = s;
 	}

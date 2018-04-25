@@ -7,10 +7,10 @@ public class SpawnsOnVehicle {
 	private Vehicle vehicle;
 	private Map map;
 	
-	SpawnsOnVehicle() {
+	public SpawnsOnVehicle() {
 	}
 	
-	SpawnsOnVehicle(Vehicle v, Map m) {
+	public SpawnsOnVehicle(Vehicle v, Map m) {
 		this.vehicle = v;
 		this.map = m;
 	}

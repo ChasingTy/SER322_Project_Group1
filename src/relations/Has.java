@@ -7,10 +7,10 @@ public class Has {
 	private Item item;
 	private Player player;
 	
-	Has() {
+	public Has() {
 	}
 	
-	Has(Item i, Player p) {
+	public Has(Item i, Player p) {
 		this.item = i;
 		this.player = p;
 	}

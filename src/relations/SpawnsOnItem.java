@@ -7,10 +7,10 @@ public class SpawnsOnItem {
 	private Item item;
 	private Map map;
 	
-	SpawnsOnItem() {
+	public SpawnsOnItem() {
 	}
 	
-	SpawnsOnItem(Item i, Map m) {
+	public SpawnsOnItem(Item i, Map m) {
 		this.item = i;
 		this.map = m;
 	}
