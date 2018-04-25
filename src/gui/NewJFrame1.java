@@ -1,4 +1,4 @@
-
+package gui;
 
 public class NewJFrame1 extends javax.swing.JFrame {
 
