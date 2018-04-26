@@ -22,7 +22,7 @@ public class Vehicle {
 		json.put("name", this.name);
 		json.put("health", this.health);
 		json.put("numSeats", this.numSeats);
-		json.put("topSpeeds", this.topSpeed);
+		json.put("topSpeed", this.topSpeed);
 		return json;
 	}
 	

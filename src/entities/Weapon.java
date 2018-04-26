@@ -3,7 +3,7 @@ import org.json.*;
 
 public class Weapon extends Item {
 	private String type;
-	private double bulletSpeed;
+	private int bulletSpeed;
 	private int fireRate;
 	private int damage;
 	private int currentMagCapacity;
@@ -12,7 +12,7 @@ public class Weapon extends Item {
 	public Weapon() {
 	}
 	
-	public Weapon(String n, String t, double b, int f, int d, int c, int m) {
+	public Weapon(String n, String t, int b, int f, int d, int c, int m) {
 		super(n);
 		this.type = t;
 		this.bulletSpeed = b;
@@ -36,13 +36,13 @@ public class Weapon extends Item {
 	
 	public void fromJson(JSONObject json) {
 	    try {
-	    	this.setValues(json.getString("name"), json.getString("type"), json.getDouble("bulletSpeed"), json.getInt("fireRate"), json.getInt("damage"), json.getInt("currentMagCapacity"), json.getInt("maxMagCapacity"));
+	    	this.setValues(json.getString("name"), json.getString("type"), json.getInt("bulletSpeed"), json.getInt("fireRate"), json.getInt("damage"), json.getInt("currentMagCapacity"), json.getInt("maxMagCapacity"));
 	    } catch (Exception ex) {
 	    	ex.printStackTrace();
 	    }
 	}
 	
-	public void setValues(String n, String t, double b, int f, int d, int c, int m) {
+	public void setValues(String n, String t, int b, int f, int d, int c, int m) {
 		this.setValues(n);
 		this.type = t;
 		this.bulletSpeed = b;
