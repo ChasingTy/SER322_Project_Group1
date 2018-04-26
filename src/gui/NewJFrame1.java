@@ -1,4 +1,4 @@
-
+package gui;
 
 public class NewJFrame1 extends javax.swing.JFrame {
 
@@ -71,10 +71,35 @@ public class NewJFrame1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("View", jPanel1);
 
-        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Player","Session","Map","Vehicle","Item","Clothing","Throwable","Weapon","Armor","Ammo","Standard","Booster","Healing Item","BackPack" }));
+        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Item", "How Many Players Have a(n):","How many Vehicles have: ","How many _____ Items Are there on the map."}));
         QueryItemComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QueryItemComboBoxActionPerformed(evt);
+                String Selected = QueryItemComboBox.getSelectedItem().toString();
+                if(Selected == "How Many Players Have a(n):") {
+                    QueryComboBox.removeAllItems();
+                    QueryComboBox.addItem("M4");
+                    QueryComboBox.addItem("AKM");
+                    QueryComboBox.addItem("MedKit");
+                    QueryComboBox.addItem("M16");
+                    QueryComboBox.addItem("Smoke Grenade");
+                    QueryComboBox.addItem("Level 3 Helmet");
+                    QueryComboBox.addItem("Pan");
+                }
+                else if(Selected == "How many Vehicles have: ") {
+                    QueryComboBox.removeAllItems();
+                    QueryComboBox.addItem("4 Seats");
+                    QueryComboBox.addItem("Top speed of 70 Mph");
+                    QueryComboBox.addItem("");
+                }
+                else if(Selected == "How many _____ Items Are there on the map.") {
+                    QueryComboBox.removeAllItems();
+                    QueryComboBox.addItem("M4");
+                    QueryComboBox.addItem("AKM");
+                    QueryComboBox.addItem("Vehicles");
+                }
+                
+                
             }
         });
 
@@ -82,7 +107,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
 
         jLabel18.setText("What would you like to Know:");
 
-        QueryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        QueryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
