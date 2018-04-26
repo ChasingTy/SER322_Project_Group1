@@ -1,1 +1,37 @@
-{}
+{
+ "Military Vest": {
+  "tier": 3,
+  "durability": 250,
+  "name": "Military Vest",
+  "rating": 200,
+  "slot": "Chest"
+ },
+ "Spetsnaz Helmet": {
+  "tier": 3,
+  "durability": 230,
+  "name": "Spetsnaz Helmet",
+  "rating": 50,
+  "slot": "Head"
+ },
+ "Motorcycle Helmet": {
+  "tier": 1,
+  "durability": 80,
+  "name": "Motorcycle Helmet",
+  "rating": 15,
+  "slot": "Head"
+ },
+ "Police Vest": {
+  "tier": 2,
+  "durability": 220,
+  "name": "Police Vest",
+  "rating": 90,
+  "slot": "Chest"
+ },
+ "Military Helmet": {
+  "tier": 2,
+  "durability": 150,
+  "name": "Military Helmet",
+  "rating": 100,
+  "slot": "Head"
+ }
+}

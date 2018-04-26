@@ -1,1 +1,14 @@
-{}
+{
+ "Miramar": {
+  "size": 64,
+  "name": "Miramar"
+ },
+ "Erangel": {
+  "size": 64,
+  "name": "Erangel"
+ },
+ "Savage": {
+  "size": 16,
+  "name": "Savage"
+ }
+}

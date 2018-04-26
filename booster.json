@@ -1,1 +1,17 @@
-{}
+{
+ "Energy Drink": {
+  "name": "Energy Drink",
+  "health": 20,
+  "energy": 40
+ },
+ "Painkiller": {
+  "name": "Painkiller",
+  "health": 30,
+  "energy": 60
+ },
+ "Adrenaline Syringe": {
+  "name": "Adrenaline Syringe",
+  "health": 50,
+  "energy": 100
+ }
+}

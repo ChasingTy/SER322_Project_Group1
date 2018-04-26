@@ -1,1 +1,182 @@
-{}
+{
+ "AKM": {
+  "damage": 48,
+  "fireRate": 600,
+  "maxMagCapacity": 40,
+  "name": "AKM",
+  "type": "Assault Rifle",
+  "bulletSpeed": 715,
+  "currentMagCapacity": 30
+ },
+ "GROZA": {
+  "damage": 48,
+  "fireRate": 750,
+  "maxMagCapacity": 40,
+  "name": "GROZA",
+  "type": "Assault Rifle",
+  "bulletSpeed": 715,
+  "currentMagCapacity": 30
+ },
+ "KAR98K": {
+  "damage": 72,
+  "fireRate": 32,
+  "maxMagCapacity": 5,
+  "name": "KAR98K",
+  "type": "Sniper Rifle",
+  "bulletSpeed": 760,
+  "currentMagCapacity": 5
+ },
+ "UMP9": {
+  "damage": 35,
+  "fireRate": 652,
+  "maxMagCapacity": 40,
+  "name": "UMP9",
+  "type": "Submachine Gun",
+  "bulletSpeed": 400,
+  "currentMagCapacity": 30
+ },
+ "P1911": {
+  "damage": 35,
+  "fireRate": 545,
+  "maxMagCapacity": 15,
+  "name": "P1911",
+  "type": "Pistol",
+  "bulletSpeed": 250,
+  "currentMagCapacity": 7
+ },
+ "S696": {
+  "damage": 25,
+  "fireRate": 300,
+  "maxMagCapacity": 2,
+  "name": "S696",
+  "type": "Shotgun",
+  "bulletSpeed": 370,
+  "currentMagCapacity": 2
+ },
+ "P92": {
+  "damage": 29,
+  "fireRate": 444,
+  "maxMagCapacity": 20,
+  "name": "P92",
+  "type": "Pistol",
+  "bulletSpeed": 380,
+  "currentMagCapacity": 15
+ },
+ "Tommy Gun": {
+  "damage": 38,
+  "fireRate": 698,
+  "maxMagCapacity": 50,
+  "name": "Tommy Gun",
+  "type": "Submachine Gun",
+  "bulletSpeed": 280,
+  "currentMagCapacity": 20
+ },
+ "P18C": {
+  "damage": 19,
+  "fireRate": 1000,
+  "maxMagCapacity": 30,
+  "name": "P18C",
+  "type": "Pistol",
+  "bulletSpeed": 375,
+  "currentMagCapacity": 17
+ },
+ "Micro Peen": {
+  "damage": 23,
+  "fireRate": 1250,
+  "maxMagCapacity": 35,
+  "name": "Micro Peen",
+  "type": "Submachine Gun",
+  "bulletSpeed": 350,
+  "currentMagCapacity": 25
+ },
+ "P1895": {
+  "damage": 46,
+  "fireRate": 150,
+  "maxMagCapacity": 7,
+  "name": "P1895",
+  "type": "Pistol",
+  "bulletSpeed": 330,
+  "currentMagCapacity": 7
+ },
+ "M416": {
+  "damage": 41,
+  "fireRate": 698,
+  "maxMagCapacity": 40,
+  "name": "M416",
+  "type": "Assault Rifle",
+  "bulletSpeed": 880,
+  "currentMagCapacity": 30
+ },
+ "S1897": {
+  "damage": 25,
+  "fireRate": 80,
+  "maxMagCapacity": 5,
+  "name": "S1897",
+  "type": "Shotgun",
+  "bulletSpeed": 360,
+  "currentMagCapacity": 5
+ },
+ "SCAR-L": {
+  "damage": 41,
+  "fireRate": 625,
+  "maxMagCapacity": 40,
+  "name": "SCAR-L",
+  "type": "Assault Rifle",
+  "bulletSpeed": 870,
+  "currentMagCapacity": 30
+ },
+ "M16A4": {
+  "damage": 41,
+  "fireRate": 800,
+  "maxMagCapacity": 40,
+  "name": "M16A4",
+  "type": "Assault Rifle",
+  "bulletSpeed": 900,
+  "currentMagCapacity": 30
+ },
+ "S12K": {
+  "damage": 22,
+  "fireRate": 240,
+  "maxMagCapacity": 10,
+  "name": "S12K",
+  "type": "Shotgun",
+  "bulletSpeed": 350,
+  "currentMagCapacity": 5
+ },
+ "VSS": {
+  "damage": 38,
+  "fireRate": 698,
+  "maxMagCapacity": 10,
+  "name": "VSS",
+  "type": "Sniper Rifle",
+  "bulletSpeed": 330,
+  "currentMagCapacity": 10
+ },
+ "Mini14": {
+  "damage": 44,
+  "fireRate": 600,
+  "maxMagCapacity": 30,
+  "name": "Mini14",
+  "type": "Sniper Rifle",
+  "bulletSpeed": 990,
+  "currentMagCapacity": 20
+ },
+ "SKS": {
+  "damage": 55,
+  "fireRate": 666,
+  "maxMagCapacity": 20,
+  "name": "SKS",
+  "type": "Sniper Rifle",
+  "bulletSpeed": 800,
+  "currentMagCapacity": 10
+ },
+ "Vector": {
+  "damage": 31,
+  "fireRate": 1090,
+  "maxMagCapacity": 25,
+  "name": "Vector",
+  "type": "Submachine Gun",
+  "bulletSpeed": 300,
+  "currentMagCapacity": 13
+ }
+}

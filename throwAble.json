@@ -1,1 +1,26 @@
-{}
+{
+ "Frag Grenade": {
+  "damage": 100,
+  "quantity": 1,
+  "name": "Frag Grenade",
+  "type": "Damage"
+ },
+ "Stun Grenade": {
+  "damage": 0,
+  "quantity": 2,
+  "name": "Stun Grenade",
+  "type": "Tactical"
+ },
+ "Smoke Grenade": {
+  "damage": 0,
+  "quantity": 1,
+  "name": "Smoke Grenade",
+  "type": "Tactical"
+ },
+ "Molotov Cocktail": {
+  "damage": 100,
+  "quantity": 2,
+  "name": "Molotov Cocktail",
+  "type": "Damage"
+ }
+}

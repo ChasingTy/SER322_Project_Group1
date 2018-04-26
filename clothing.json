@@ -1,1 +1,78 @@
-{}
+{
+ "Tracksuit Top (Yellow)": {
+  "name": "Tracksuit Top (Yellow)",
+  "slot": "Outer"
+ },
+ "Mini-skirt (Purple)": {
+  "name": "Mini-skirt (Purple)",
+  "slot": "Legs"
+ },
+ "Cropped Corset": {
+  "name": "Cropped Corset",
+  "slot": "Torso"
+ },
+ "Zest Bootcut Pants": {
+  "name": "Zest Bootcut Pants",
+  "slot": "Legs"
+ },
+ "Military Cap (Black))": {
+  "name": "Military Cap (Black))",
+  "slot": "Head"
+ },
+ "Ballistic Mask": {
+  "name": "Ballistic Mask",
+  "slot": "Mask"
+ },
+ "School Shirt with Necktie": {
+  "name": "School Shirt with Necktie",
+  "slot": "Torso"
+ },
+ "Zest Sunglasses": {
+  "name": "Zest Sunglasses",
+  "slot": "Eyes"
+ },
+ "Aviator Sunglasses": {
+  "name": "Aviator Sunglasses",
+  "slot": "Eyes"
+ },
+ "Long Sleeved Turtleneck (Black)": {
+  "name": "Long Sleeved Turtleneck (Black)",
+  "slot": "Torso"
+ },
+ "Punk Knuckle Gloves": {
+  "name": "Punk Knuckle Gloves",
+  "slot": "Hands"
+ },
+ "Bloody Sneakers": {
+  "name": "Bloody Sneakers",
+  "slot": "Feet"
+ },
+ "Vintage Gas Mask": {
+  "name": "Vintage Gas Mask",
+  "slot": "Mask"
+ },
+ "Camo Cap)": {
+  "name": "Camo Cap)",
+  "slot": "Head"
+ },
+ "Baggy Pants (Black)": {
+  "name": "Baggy Pants (Black)",
+  "slot": "Legs"
+ },
+ "Camo Hotpants": {
+  "name": "Camo Hotpants",
+  "slot": "Legs"
+ },
+ "Zest Loafers with Socks": {
+  "name": "Zest Loafers with Socks",
+  "slot": "Feet"
+ },
+ "Tracksuit Pants (Yellow)": {
+  "name": "Tracksuit Pants (Yellow)",
+  "slot": "Legs"
+ },
+ "Coat": {
+  "name": "Coat",
+  "slot": "Outer"
+ }
+}

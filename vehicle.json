@@ -1,1 +1,38 @@
-{}
+{
+ "Bus": {
+  "topSpeed": 50,
+  "numSeats": 25,
+  "name": "Bus",
+  "health": 6
+ },
+ "Dacia": {
+  "topSpeed": 100,
+  "numSeats": 75,
+  "name": "Dacia",
+  "health": 4
+ },
+ "Truck": {
+  "topSpeed": 100,
+  "numSeats": 40,
+  "name": "Truck",
+  "health": 4
+ },
+ "Bike": {
+  "topSpeed": 150,
+  "numSeats": 69,
+  "name": "Bike",
+  "health": 2
+ },
+ "Buggy": {
+  "topSpeed": 100,
+  "numSeats": 70,
+  "name": "Buggy",
+  "health": 2
+ },
+ "UAZ": {
+  "topSpeed": 120,
+  "numSeats": 50,
+  "name": "UAZ",
+  "health": 4
+ }
+}

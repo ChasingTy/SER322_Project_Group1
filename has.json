@@ -1,1 +1,13 @@
-{}
+{"ChinaNumba1": {
+ "item": {
+  "quantity": 100,
+  "name": "5.56",
+  "type": "5.56"
+ },
+ "player": {
+  "gender": "Male",
+  "name": "ChinaNumba1",
+  "health": 100,
+  "energy": 0
+ }
+}}

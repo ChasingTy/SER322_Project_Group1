@@ -1,1 +1,17 @@
-{}
+{
+ "First Aid Kit": {
+  "quantity": 1,
+  "tier": 2,
+  "name": "First Aid Kit"
+ },
+ "Bandage": {
+  "quantity": 10,
+  "tier": 1,
+  "name": "Bandage"
+ },
+ "Med Kit": {
+  "quantity": 2,
+  "tier": 3,
+  "name": "Med Kit"
+ }
+}

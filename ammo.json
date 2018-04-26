@@ -1,1 +1,27 @@
-{}
+{
+ "5.56": {
+  "quantity": 160,
+  "name": "5.56",
+  "type": "5.56"
+ },
+ "12 Gauge": {
+  "quantity": 60,
+  "name": "12 Gauge",
+  "type": "12 Gauge"
+ },
+ "9": {
+  "quantity": 200,
+  "name": "9",
+  "type": "9"
+ },
+ "7.62": {
+  "quantity": 200,
+  "name": "7.62",
+  "type": "7.62"
+ },
+ ".45": {
+  "quantity": 420,
+  "name": ".45",
+  "type": ".45"
+ }
+}
