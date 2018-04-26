@@ -271,6 +271,41 @@ public class Global {
 		weaponList.getList().add(weapon20);
 		weaponList.exportJSON();
 		
+		//Session
+		sessionList.getList().clear();
+		Session session1 = new Session("Game 1", "Server 1", "Squads", 1, 90, 1);
+		sessionList.getList().add(session1);
+		Session session2 = new Session("Game 2", "Server 2", "Dou", 5, 46, 10);
+		sessionList.getList().add(session2);
+		Session session3 = new Session("Game 3", "Server 3", "Solo", 10, 3, 30);
+		sessionList.getList().add(session3);
+		sessionList.exportJSON();
+		
+		//Player
+		playerList.getList().clear();
+		Player player1 = new Player("ChinaNumba1", "Male", 100, 0);
+		playerList.getList().add(player1);
+		Player player2 = new Player("PochinkiIsMyCity", "Female", 20, 50);
+		playerList.getList().add(player2);
+		Player player3 = new Player("CaoNiMa", "Male", 75, 0);
+		playerList.getList().add(player3);
+		Player player4 = new Player("Shroud", "Male", 100, 100);
+		playerList.getList().add(player4);
+		Player player5 = new Player("DrDisrespect", "Male", 100, 50);
+		playerList.getList().add(player5);
+		Player player6 = new Player("Grill", "Female", 80, 10);
+		playerList.getList().add(player6);
+		Player player7 = new Player("DontPanMe", "Female", 0, 0);
+		playerList.getList().add(player7);
+		Player player8 = new Player("CrateChaser420", "Male", 25, 50);
+		playerList.getList().add(player8);
+		playerList.exportJSON();
+		
+		
+		
+		
+		
+		
 		
 		
 	}
