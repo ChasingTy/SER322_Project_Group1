@@ -10,8 +10,8 @@ public class Global {
 	public static BackpackList backpackList = new BackpackList();
 	public static BoosterList boosterList = new BoosterList();
 	public static ClothingList clothingList = new ClothingList();
-	public static HealingItemList healingItemList = new HealingItemList();
-	public static ItemList itemList = new ItemList();
+	//public static HealingItemList healingItemList = new HealingItemList();
+	//public static ItemList itemList = new ItemList();
 	public static MapList mapList = new MapList();
 	public static PlayerList playerList = new PlayerList();
 	public static SessionList sessionList = new SessionList();
@@ -301,12 +301,74 @@ public class Global {
 		playerList.getList().add(player8);
 		playerList.exportJSON();
 		
+		//HappensOn
+		happensOnList.getList().clear();
+		HappensOn happensOn1 = new HappensOn(map1, session1);
+		happensOnList.getList().add(happensOn1);
+		HappensOn happensOn2 = new HappensOn(map2, session3);
+		happensOnList.getList().add(happensOn2);
+		HappensOn happensOn3 = new HappensOn(map3, session2);
+		happensOnList.getList().add(happensOn3);
+		happensOnList.exportJSON();
 		
+		//PlaysIn
+		playsInList.getList().clear();
+		PlaysIn playsIn1 = new PlaysIn(player1, session1);
+		playsInList.getList().add(playsIn1);
+		PlaysIn playsIn2 = new PlaysIn(player2, session1);
+		playsInList.getList().add(playsIn2);
+		PlaysIn playsIn3 = new PlaysIn(player3, session1);
+		playsInList.getList().add(playsIn3);
+		PlaysIn playsIn4 = new PlaysIn(player4, session1);
+		playsInList.getList().add(playsIn4);
+		PlaysIn playsIn5 = new PlaysIn(player5, session1);
+		playsInList.getList().add(playsIn5);
+		PlaysIn playsIn6 = new PlaysIn(player6, session1);
+		playsInList.getList().add(playsIn6);
+		PlaysIn playsIn7 = new PlaysIn(player7, session1);
+		playsInList.getList().add(playsIn7);
+		PlaysIn playsIn8 = new PlaysIn(player8, session1);
+		playsInList.getList().add(playsIn8);
+		playsInList.exportJSON();
 		
+		//SpawnsOnVehicle
+		spawnsOnVehicleList.getList().clear();
+		SpawnsOnVehicle sov1 = new SpawnsOnVehicle(vehicle1, map1);
+		spawnsOnVehicleList.getList().add(sov1);
+		SpawnsOnVehicle sov2 = new SpawnsOnVehicle(vehicle2, map1);
+		spawnsOnVehicleList.getList().add(sov2);
+		SpawnsOnVehicle sov3 = new SpawnsOnVehicle(vehicle3, map1);
+		spawnsOnVehicleList.getList().add(sov3);
+		SpawnsOnVehicle sov4 = new SpawnsOnVehicle(vehicle4, map1);
+		spawnsOnVehicleList.getList().add(sov4);
+		SpawnsOnVehicle sov5 = new SpawnsOnVehicle(vehicle5, map1);
+		spawnsOnVehicleList.getList().add(sov5);
+		SpawnsOnVehicle sov6 = new SpawnsOnVehicle(vehicle6, map1);
+		spawnsOnVehicleList.getList().add(sov6);
+		SpawnsOnVehicle sov7 = new SpawnsOnVehicle(vehicle7, map2);
+		spawnsOnVehicleList.getList().add(sov7);
+		SpawnsOnVehicle sov8 = new SpawnsOnVehicle(vehicle8, map2);
+		spawnsOnVehicleList.getList().add(sov8);
+		SpawnsOnVehicle sov9 = new SpawnsOnVehicle(vehicle9, map2);
+		spawnsOnVehicleList.getList().add(sov9);
+		SpawnsOnVehicle sov10 = new SpawnsOnVehicle(vehicle10, map2);
+		spawnsOnVehicleList.getList().add(sov10);
+		SpawnsOnVehicle sov11 = new SpawnsOnVehicle(vehicle11, map2);
+		spawnsOnVehicleList.getList().add(sov11);
+		SpawnsOnVehicle sov12 = new SpawnsOnVehicle(vehicle12, map2);
+		spawnsOnVehicleList.getList().add(sov12);
+		spawnsOnVehicleList.exportJSON();
 		
+		//SpawnsOnItem TODO
+		spawnsOnItemList.getList().clear();
+		SpawnsOnItem soi1 = new SpawnsOnItem(ammo1, map1);
+		spawnsOnItemList.getList().add(soi1);
+		spawnsOnItemList.exportJSON();
 		
-		
-		
-		
+		//Has TODO
+		hasList.getList().clear();
+		Has has1 = new Has(ammo1, player1);
+		hasList.getList().add(has1);
+		hasList.exportJSON();
 	}
 }

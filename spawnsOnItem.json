@@ -1,1 +1,11 @@
-{}
+{"5.56": {
+ "item": {
+  "quantity": 100,
+  "name": "5.56",
+  "type": "5.56"
+ },
+ "map": {
+  "size": 64,
+  "name": "Erangel"
+ }
+}}

@@ -1,1 +1,74 @@
-{}
+{
+ "Bus": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "numSeats": 25,
+   "name": "Bus",
+   "health": 6,
+   "topSpeeds": 50
+  }
+ },
+ "Dacia": {
+  "map": {
+   "size": 64,
+   "name": "Erangel"
+  },
+  "vehicle": {
+   "numSeats": 75,
+   "name": "Dacia",
+   "health": 4,
+   "topSpeeds": 100
+  }
+ },
+ "Truck": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "numSeats": 40,
+   "name": "Truck",
+   "health": 4,
+   "topSpeeds": 100
+  }
+ },
+ "Bike": {
+  "map": {
+   "size": 64,
+   "name": "Erangel"
+  },
+  "vehicle": {
+   "numSeats": 69,
+   "name": "Bike",
+   "health": 2,
+   "topSpeeds": 150
+  }
+ },
+ "Buggy": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "numSeats": 70,
+   "name": "Buggy",
+   "health": 2,
+   "topSpeeds": 100
+  }
+ },
+ "UAZ": {
+  "map": {
+   "size": 64,
+   "name": "Erangel"
+  },
+  "vehicle": {
+   "numSeats": 50,
+   "name": "UAZ",
+   "health": 4,
+   "topSpeeds": 120
+  }
+ }
+}

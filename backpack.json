@@ -1,1 +1,10 @@
-{}
+{
+ "Backpack": {
+  "name": "Backpack",
+  "capacity": 250
+ },
+ "Utility Belt": {
+  "name": "Utility Belt",
+  "capacity": 50
+ }
+}
