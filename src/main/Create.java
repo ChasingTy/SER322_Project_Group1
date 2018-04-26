@@ -158,10 +158,9 @@ public class Create {
         }
     }
 
-    public static void main(String[] args) {
+    public Create() {
         createNewDatabase("game.db");
         createNewTable();
-        //insert("miramar", 2000);
-        //insert("errangel", 1999);
+        
     }
 }
