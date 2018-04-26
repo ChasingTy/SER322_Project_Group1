@@ -3,7 +3,9 @@ package main;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
  
 /**
  *
@@ -11,20 +13,12 @@ import java.sql.SQLException;
  */
 public class Create {
  
-    /**
-     * Connect to a sample database
-     *
-     * @param fileName the database file name
-     */
+    static String url = "jdbc:sqlite:db/test.db";
+    
     public static void createNewDatabase(String fileName) {
  
-        String url = "jdbc:sqlite:db/" + fileName;
-        
-        String sql = "CREATE TABLE IF NOT EXISTS player (\n"
-                + " id integer PRIMARY KEY,\n"
-                + " name text NOT NULL,\n"
-                + " capacity real\n"
-                + ");";
+
+
         
  
         try (Connection conn = DriverManager.getConnection(url)) {
@@ -40,11 +34,54 @@ public class Create {
         
         
     }
+    
+    
+    public static void createNewTable() {
+                
+        try (Connection conn = DriverManager.getConnection(url);
+                Statement stmt = conn.createStatement()) {
+            // create a new table
+            
+            
+            String sql = "CREATE TABLE IF NOT EXISTS player (\n"
+                    + " name text PRIMARY KEY,\n"
+                    + " gender text NOT NULL,\n"
+                    + " health integer NOT NULL,\n"
+                    + " energy integer NOT NULL\n"
+                    + ");";
+            
+            stmt.execute(sql);
+            
+            sql = "CREATE TABLE IF NOT EXISTS map (\n"
+                    + " name text PRIMARY KEY,\n"
+                    + " size integer NOT NULL\n"
+                    + ");";
+            
+            
+            
+            stmt.execute(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public static void insert(String name, int size) {
+        String sql = "INSERT INTO map(name,size) VALUES(?,?)";
  
-    /**
-     * @param args the command line arguments
-     */
+        try (Connection conn = DriverManager.getConnection(url);
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            pstmt.setInt(2, size);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
         createNewDatabase("test.db");
+        createNewTable();
+        insert("miramar", 2000);
+        insert("errangel", 1999);
     }
 }
