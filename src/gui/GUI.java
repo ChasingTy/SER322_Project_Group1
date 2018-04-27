@@ -107,7 +107,7 @@ public class GUI extends javax.swing.JFrame {
                                        for (int i = 1; i <= columnsNumber; i++) {
                                            if (i > 1) System.out.print("\t");
                                            String columnValue = rs.getString(i);
-                                           //somthing wrong with the values here
+                                          
                                            Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
                                            
                                        }
@@ -384,12 +384,12 @@ public class GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("View", jPanel1);
 
-        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Item", "How many _____ are on the map.","How many Vehicles have: ","How many _____ Items Are there on the map."}));
+        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Item", "How many _____ are in the system.","How many Vehicles have: ","How many _____ Items Are there in the system."}));
         QueryItemComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QueryItemComboBoxActionPerformed(evt);
                 String Selected = QueryItemComboBox.getSelectedItem().toString();
-                if(Selected == "How many _____ are on the map.") {
+                if(Selected == "How many _____ are in the system.") {
                     QueryComboBox.removeAllItems();
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("GROZA");
@@ -407,7 +407,7 @@ public class GUI extends javax.swing.JFrame {
                     QueryComboBox.addItem("Top speed of 70 Mph or more");
                     QueryComboBox.addItem("");
                 }
-                else if(Selected == "How many _____ Items Are there on the map.") {
+                else if(Selected == "How many _____ Items Are there in the system.") {
                     QueryComboBox.removeAllItems();
                     //Spaces added so there are no duplicates
                     QueryComboBox.addItem(" ");
@@ -444,7 +444,7 @@ public class GUI extends javax.swing.JFrame {
                                size++;
                                Output = Output+"\n";
                            }
-                           jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output +"\n");
+                           jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output +"\n");
                        } catch (SQLException e) {
                            System.out.println(e.getMessage());
                        }
@@ -468,7 +468,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -492,7 +492,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -522,7 +522,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -546,7 +546,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -570,7 +570,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -594,7 +594,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -620,7 +620,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -645,7 +645,7 @@ public class GUI extends javax.swing.JFrame {
                                 Output = Output+"\n";
 
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -671,7 +671,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -695,7 +695,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -719,7 +719,7 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
