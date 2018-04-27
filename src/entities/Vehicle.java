@@ -10,7 +10,7 @@ public class Vehicle {
 	public Vehicle() {
 	}
 	
-	public Vehicle(String n, int h, int s, int t) {
+	public Vehicle(String n, int s, int h, int t) {
 		this.name = n;
 		this.health = h;
 		this.numSeats = s;
@@ -20,8 +20,8 @@ public class Vehicle {
 	public JSONObject toJSON() {
 		JSONObject json = new JSONObject();
 		json.put("name", this.name);
-		json.put("health", this.health);
 		json.put("numSeats", this.numSeats);
+		json.put("health", this.health);
 		json.put("topSpeed", this.topSpeed);
 		return json;
 	}

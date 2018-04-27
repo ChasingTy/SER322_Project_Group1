@@ -105,6 +105,7 @@ public class GUI extends javax.swing.JFrame {
                                        for (int i = 1; i <= columnsNumber; i++) {
                                            if (i > 1) System.out.print("\t");
                                            String columnValue = rs.getString(i);
+                                           //somthing wrong with the values here
                                            Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
                                            
                                        }
@@ -401,7 +402,7 @@ public class GUI extends javax.swing.JFrame {
                     QueryComboBox.removeAllItems();
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("4 Seats");
-                    QueryComboBox.addItem("Top speed of 70 Mph");
+                    QueryComboBox.addItem("Top speed of 70 Mph or more");
                     QueryComboBox.addItem("");
                 }
                 else if(Selected == "How many _____ Items Are there on the map.") {
@@ -439,9 +440,9 @@ public class GUI extends javax.swing.JFrame {
                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                }
                                size++;
-
+                               Output = Output+"\n";
                            }
-                           jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                           jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output +"\n");
                        } catch (SQLException e) {
                            System.out.println(e.getMessage());
                        }
@@ -463,9 +464,9 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -487,9 +488,9 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -517,9 +518,9 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -541,9 +542,9 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
@@ -565,16 +566,16 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
                      
                 }
                 else if(Selected == "Pan") {
-                	Query = "SELECT FROM WHERE";
+                	Query = "SELECT * FROM Weapon WHERE name =\"Pan\"";
                 	try (Connection conn = DriverManager.getConnection(url);
                             PreparedStatement pstmt  = conn.prepareStatement(Query)){
                             ResultSet rs  = pstmt.executeQuery(); 
@@ -589,16 +590,42 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
                      
                 }
+                
+                //__________________________________________________________________________________________________________________________________________________________________
                 else if(Selected == "4 Seats") {
-                	Query = "SELECT FROM WHERE";
+                	Query = "SELECT * FROM vehicle WHERE numSeats = 4";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Top speed of 70 Mph or more") {
+                	Query = "SELECT * FROM vehicle WHERE topSpeed >= 70";
                 	try (Connection conn = DriverManager.getConnection(url);
                             PreparedStatement pstmt  = conn.prepareStatement(Query)){
                             ResultSet rs  = pstmt.executeQuery(); 
@@ -613,38 +640,17 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
+                                Output = Output+"\n";
 
                             }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
                      
                 }
-                else if(Selected == "Top speed of 70 Mph") {
-                	Query = "SELECT FROM WHERE";
-                	try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery(); 
-                            ResultSetMetaData rsmd = rs.getMetaData();
-                            int columnsNumber = rsmd.getColumnCount();
-                            // loop through the result set
-                            while (rs.next()) {
-                                for (int i = 1; i <= columnsNumber; i++) {
-                                    if (i > 1) System.out.print("\t");
-                                    String columnValue = rs.getString(i);
-                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
-                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
-                                }
-                                size++;
-
-                            }
-                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
-                        } catch (SQLException e) {
-                            System.out.println(e.getMessage());
-                        }
-                     
-                }
+                //____________________________________________________________________________________________________________________________________________________________________
+                
                 else if(Selected == "M4 ") {
                 	Query = "SELECT FROM WHERE";
                 	try (Connection conn = DriverManager.getConnection(url);
@@ -661,7 +667,7 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
                             jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
@@ -685,7 +691,7 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
                             jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
@@ -709,7 +715,7 @@ public class GUI extends javax.swing.JFrame {
                                     //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
                                 }
                                 size++;
-
+                                Output = Output+"\n";
                             }
                             jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
