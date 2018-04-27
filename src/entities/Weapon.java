@@ -56,7 +56,7 @@ public class Weapon extends Item {
 		return type;
 	}
 	
-	public double getBulletSpeed() {
+	public int getBulletSpeed() {
 		return bulletSpeed;
 	}
 	

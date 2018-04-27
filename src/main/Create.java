@@ -6,23 +6,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedList;
 
 import org.json.JSONObject;
- 
-/**
- *
- * @author sqlitetutorial.net
- */
+
+import entities.Ammo;
+import entityLists.AmmoList;
+
 public class Create {
  
     static String url = "jdbc:sqlite:db/test.db";
     
     public static void createNewDatabase(String fileName) {
- 
 
-
-        
- 
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
@@ -32,9 +28,7 @@ public class Create {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        
-        
-        
+         
     }
     
     
@@ -97,7 +91,7 @@ public class Create {
                     + " gameID text PRIMARY KEY,\n"
                     + " server text NOT NULL,\n"
                     + " gameType text NOT NULL,\n"
-                    + " circilePos integer NOT NULL,\n"
+                    + " circlePos integer NOT NULL,\n"
                     + " numPlayers integer NOT NULL,\n"
                     + " time integer NOT NULL\n"
                     + ");";                                  
@@ -136,31 +130,16 @@ public class Create {
                     + " maxMagCapacity integer\n"
                     + ");";                                  
             stmt.execute(sql);
-            
-            
-            
+
             
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
     
-    public static void insert(JSONObject in) {
-        String sql = "INSERT INTO map(name,size) VALUES(?,?)";
- 
-        try (Connection conn = DriverManager.getConnection(url);
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            //pstmt.setString(1, name);
-            //pstmt.setInt(2, size);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
     public Create() {
         createNewDatabase("game.db");
         createNewTable();
-        
+      
     }
 }
