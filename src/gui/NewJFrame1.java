@@ -1,5 +1,12 @@
 package gui;
 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class NewJFrame1 extends javax.swing.JFrame {
 
     /**
@@ -12,7 +19,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	final String url = "jdbc:sqlite:db/test.db";
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         ViewComboBox = new javax.swing.JComboBox<>();
@@ -71,14 +78,14 @@ public class NewJFrame1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("View", jPanel1);
 
-        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Item", "How Many Players Have a(n):","How many Vehicles have: ","How many _____ Items Are there on the map."}));
+        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Item", "How many _____ are on the map.","How many Vehicles have: ","How many _____ Items Are there on the map."}));
         QueryItemComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QueryItemComboBoxActionPerformed(evt);
                 String Selected = QueryItemComboBox.getSelectedItem().toString();
-                if(Selected == "How Many Players Have a(n):") {
+                if(Selected == "How many _____ are on the map.") {
                     QueryComboBox.removeAllItems();
-                    QueryComboBox.addItem("M4");
+                    QueryComboBox.addItem("GROZA");
                     QueryComboBox.addItem("AKM");
                     QueryComboBox.addItem("MedKit");
                     QueryComboBox.addItem("M16");
@@ -107,49 +114,64 @@ public class NewJFrame1 extends javax.swing.JFrame {
                 QueryComboBoxActionPerformed(evt);
                 String Selected = QueryComboBox.getSelectedItem().toString();
                 String Query;
-                if(Selected == "M4") {
-                	Query = "";
-                	
+                if(Selected == "GROZA") {
+                	Query = "SELECT * FROM WEAPON WHERE Name = \"GROZA\"";
+                	try (Connection conn = DriverManager.getConnection(url);
+                           PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                           ResultSet rs  = pstmt.executeQuery();                   
+                           // loop through the result set
+                           while (rs.next()) {
+                               System.out.println(rs.getString("name") +  "\t" + 
+                            		   			  rs.getString("type") + "\t" +
+                                                  rs.getInt("bulletSpeed") + "\t" +
+                                                  rs.getInt("fireRate") + "\t" +
+                                                  rs.getInt("damage") + "\t" +
+                                                  rs.getInt("currentMagCapacity") + "\t" +
+                                                  rs.getInt("maxMagCapacity"));
+                           }
+                       } catch (SQLException e) {
+                           System.out.println(e.getMessage());
+                       }
                 }
                 else if(Selected == "AKM") {
-                	Query = "SELECT COUNT Name FROM Weapon WHERE Name = \"M4\" ";
+                	Query = "SELECT COUNT Name FROM WEAPON WHERE Name = \"AKM\"";
                 	
                 }
                 else if(Selected == "MedKit") {
-                	Query = "";
+                	Query = "SELECT COUNT Name FROM HEALING_ITEM WHERE Name = \"MedKit\"";
                 }
                 else if(Selected == "M16") {
-                	Query = "";
+                	Query = "SELECT COUNT Name FROM WEAPON WHERE Name =\"M16\"";
                 }
                 else if(Selected == "Smoke Grenade") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "Level 3 Helmet") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "Pan") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "4 Seats") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "Top speed of 70 Mph") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "M4 ") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "AKM ") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "Vehicles") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 else if(Selected == "") {
-                	Query = "";
+                	Query = "SELECT FROM WHERE";
                 }
                 
                 
@@ -236,7 +258,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
      
-        //init();
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
