@@ -7,12 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class NewJFrame1 extends javax.swing.JFrame {
+public class GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame1
      */
-    public NewJFrame1() {
+    public GUI() {
         initComponents();
     }
     
@@ -88,7 +88,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
                     QueryComboBox.addItem("GROZA");
                     QueryComboBox.addItem("AKM");
                     QueryComboBox.addItem("MedKit");
-                    QueryComboBox.addItem("M16");
+                    QueryComboBox.addItem("M416");
                     QueryComboBox.addItem("Smoke Grenade");
                     QueryComboBox.addItem("Level 3 Helmet");
                     QueryComboBox.addItem("Pan");
@@ -101,6 +101,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
                 }
                 else if(Selected == "How many _____ Items Are there on the map.") {
                     QueryComboBox.removeAllItems();
+                    //Spaces added so there are no duplicates
                     QueryComboBox.addItem("M4 ");
                     QueryComboBox.addItem("AKM ");
                     QueryComboBox.addItem("Vehicles");
@@ -114,6 +115,8 @@ public class NewJFrame1 extends javax.swing.JFrame {
                 QueryComboBoxActionPerformed(evt);
                 String Selected = QueryComboBox.getSelectedItem().toString();
                 String Query;
+                String Output="";
+                int size = 0;
                 if(Selected == "GROZA") {
                 	Query = "SELECT * FROM WEAPON WHERE Name = \"GROZA\"";
                 	try (Connection conn = DriverManager.getConnection(url);
@@ -121,57 +124,256 @@ public class NewJFrame1 extends javax.swing.JFrame {
                            ResultSet rs  = pstmt.executeQuery();                   
                            // loop through the result set
                            while (rs.next()) {
-                               System.out.println(rs.getString("name") +  "\t" + 
+                                          Output= Output +
+                                                  rs.getString("name") +  "\t" + 
                             		   			  rs.getString("type") + "\t" +
                                                   rs.getInt("bulletSpeed") + "\t" +
                                                   rs.getInt("fireRate") + "\t" +
                                                   rs.getInt("damage") + "\t" +
                                                   rs.getInt("currentMagCapacity") + "\t" +
-                                                  rs.getInt("maxMagCapacity"));
+                                                  rs.getInt("maxMagCapacity") + "\n";
+                                                  size++;
                            }
+                           jTextArea1.setText("Total Number of Groza's on the map:"+ size + "\nHere's the data: \n" +Output);
                        } catch (SQLException e) {
                            System.out.println(e.getMessage());
                        }
-                }
-                else if(Selected == "AKM") {
-                	Query = "SELECT COUNT Name FROM WEAPON WHERE Name = \"AKM\"";
                 	
                 }
-                else if(Selected == "MedKit") {
-                	Query = "SELECT COUNT Name FROM HEALING_ITEM WHERE Name = \"MedKit\"";
+                else if(Selected == "AKM") {
+                	Query = "SELECT* FROM WEAPON WHERE Name = \"AKM\"";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            size =0;
+                            Output="";
+                            // loop through the result set
+                            while (rs.next()) {
+                                           Output= Output +
+                                                   rs.getString("name") +  "\t" + 
+                                                   rs.getString("type") + "\t" +
+                                                   rs.getInt("bulletSpeed") + "\t" +
+                                                   rs.getInt("fireRate") + "\t" +
+                                                   rs.getInt("damage") + "\t" +
+                                                   rs.getInt("currentMagCapacity") + "\t" +
+                                                   rs.getInt("maxMagCapacity") + "\n";
+                                                   size++;
+                            }
+                            jTextArea1.setText("Total Number of AKM's on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
                 }
-                else if(Selected == "M16") {
-                	Query = "SELECT COUNT Name FROM WEAPON WHERE Name =\"M16\"";
+                else if(Selected == "MedKit") {
+                	Query = "SELECT * Name FROM HEALING_ITEM WHERE Name = \"MedKit\"";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();    
+                            size =0;
+                            Output="";
+                            // loop through the result set
+                            while (rs.next()) {
+                                //healing Item not in Create.java
+                                
+                                
+                                
+                                
+                                
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+                	
+                
+                }
+                else if(Selected == "M416") {
+                	Query = "SELECT * Name FROM WEAPON WHERE Name =\"M416\"";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();
+                            size =0;
+                            Output="";
+                            // loop through the result set
+                            while (rs.next()) {
+                                           Output= Output +
+                                                   rs.getString("name") +  "\t" + 
+                                                   rs.getString("type") + "\t" +
+                                                   rs.getInt("bulletSpeed") + "\t" +
+                                                   rs.getInt("fireRate") + "\t" +
+                                                   rs.getInt("damage") + "\t" +
+                                                   rs.getInt("currentMagCapacity") + "\t" +
+                                                   rs.getInt("maxMagCapacity") + "\n";
+                                                   size++;
+                            }
+                            jTextArea1.setText("Total Number of M416's on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
                 }
                 else if(Selected == "Smoke Grenade") {
-                	Query = "SELECT FROM WHERE";
+                	Query = "SELECT * FROM throwable WHERE name = \"Smoke Grenade\"";
+                	
+                	size =0;
+                    Output="";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            while (rs.next()) {
+                                Output= Output +
+                                        rs.getString("name") +  "\t" +
+                                        rs.getString("type") +  "\t" +
+                                        rs.getInt("damage") + "\t" +
+                                        rs.getInt("quantity") + "\t" +"\n";
+                                        size++;
+                            }
+                            jTextArea1.setText("Total Number of Smoke Grenades is: "+ size +"\nHere's The data:\n"+ Output);
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "Level 3 Helmet") {
-                	Query = "SELECT FROM WHERE";
+                	Query = "SELECT * FROM Armor WHERE name = \"Level 3 Helmet\"";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                Output = Output +
+                                        rs.getString("name") +  "\t" +
+                                        rs.getString("slot") +  "\t" +
+                                        rs.getInt("durability") + "\t" +
+                                        rs.getInt("rating") + "\t" +
+                                        rs.getInt("tier") + "\t" + "\n";
+                                
+                            }
+                            jTextArea1.setText("Total Number of level 3 helmets is: "+ size +"\nHere's The data:\n"+ Output);
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "Pan") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "4 Seats") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "Top speed of 70 Mph") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "M4 ") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "AKM ") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "Vehicles") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 else if(Selected == "") {
                 	Query = "SELECT FROM WHERE";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery();                   
+                            // loop through the result set
+                            size =0;
+                            Output="";
+                            while (rs.next()) {
+                                
+                            }
+                }catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
                 }
                 
                 
@@ -267,20 +469,20 @@ public class NewJFrame1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame1().setVisible(true);
+                new GUI().setVisible(true);
             }
         });
     }
