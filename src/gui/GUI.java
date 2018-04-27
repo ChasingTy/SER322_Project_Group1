@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -36,10 +37,312 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ViewComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Player","Session","Map","Vehicle","Item","Clothing","Throwable","Weapon","Armor","Ammo","Standard","Booster","Healing Item","BackPack" }));
+        ViewComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ","Player","Map","Vehicle","Clothing","Throwable","Weapon","Armor","Ammo","Standard","Booster","Healing Item","Backpack" }));
         ViewComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ViewComboBoxActionPerformed(evt);
+                //view stuff goes here
+                String viewSelected = ViewComboBox.getSelectedItem().toString();
+                        if(viewSelected == "Player"){
+                            String Output ="";
+                            String Query = "SELECT * FROM Player";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                        }
+                        else if (viewSelected == "Map"){
+                            String Output ="";
+                            String Query = "SELECT * FROM map";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Vehicle"){
+                            String Output ="";
+                            String Query = "SELECT * FROM vehicle";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Clothing"){
+                            String Output ="";
+                            String Query = "SELECT * FROM clothing";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Throwable"){
+                            String Output ="";
+                            String Query = "SELECT * FROM throwable";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Weapon"){
+                            String Output ="";
+                            String Query = "SELECT * FROM weapon";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Armor"){
+                            String Output ="";
+                            String Query = "SELECT * FROM armor";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Ammo"){
+                            String Output ="";
+                            String Query = "SELECT * FROM ammo";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Standard"){
+                            String Output ="";
+                            String Query = "SELECT * FROM standard";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Booster"){
+                            String Output ="";
+                            String Query = "SELECT * FROM booster";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Healing Item"){
+                            String Output ="";
+                            String Query = "SELECT * FROM healing_item";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+                        else if (viewSelected == "Backpack"){
+                            String Output ="";
+                            String Query = "SELECT * FROM backpack";
+                            try (Connection conn = DriverManager.getConnection(url);
+                                   PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                                   ResultSet rs  = pstmt.executeQuery(); 
+                                   ResultSetMetaData rsmd = rs.getMetaData();
+                                   int columnsNumber = rsmd.getColumnCount();
+                                   
+                                   while (rs.next()) {
+                                       for (int i = 1; i <= columnsNumber; i++) {
+                                           if (i > 1) System.out.print("\t");
+                                           String columnValue = rs.getString(i);
+                                           Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                           
+                                       }
+                                       Output = Output +"\n\n";
+
+                                   }
+                                   jTextArea2.setText(Output);
+                               } catch (SQLException e) {
+                                   System.out.println(e.getMessage());
+                               }
+                            
+                        }
+
             }
         });
 
@@ -85,6 +388,7 @@ public class GUI extends javax.swing.JFrame {
                 String Selected = QueryItemComboBox.getSelectedItem().toString();
                 if(Selected == "How many _____ are on the map.") {
                     QueryComboBox.removeAllItems();
+                    QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("GROZA");
                     QueryComboBox.addItem("AKM");
                     QueryComboBox.addItem("MedKit");
@@ -95,6 +399,7 @@ public class GUI extends javax.swing.JFrame {
                 }
                 else if(Selected == "How many Vehicles have: ") {
                     QueryComboBox.removeAllItems();
+                    QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("4 Seats");
                     QueryComboBox.addItem("Top speed of 70 Mph");
                     QueryComboBox.addItem("");
@@ -102,6 +407,7 @@ public class GUI extends javax.swing.JFrame {
                 else if(Selected == "How many _____ Items Are there on the map.") {
                     QueryComboBox.removeAllItems();
                     //Spaces added so there are no duplicates
+                    QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("M4 ");
                     QueryComboBox.addItem("AKM ");
                     QueryComboBox.addItem("Vehicles");
@@ -121,20 +427,21 @@ public class GUI extends javax.swing.JFrame {
                 	Query = "SELECT * FROM WEAPON WHERE Name = \"GROZA\"";
                 	try (Connection conn = DriverManager.getConnection(url);
                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                           ResultSet rs  = pstmt.executeQuery();                   
+                           ResultSet rs  = pstmt.executeQuery(); 
+                           ResultSetMetaData rsmd = rs.getMetaData();
+                           int columnsNumber = rsmd.getColumnCount();
                            // loop through the result set
                            while (rs.next()) {
-                                          Output= Output +
-                                                  rs.getString("name") +  "\t" + 
-                            		   			  rs.getString("type") + "\t" +
-                                                  rs.getInt("bulletSpeed") + "\t" +
-                                                  rs.getInt("fireRate") + "\t" +
-                                                  rs.getInt("damage") + "\t" +
-                                                  rs.getInt("currentMagCapacity") + "\t" +
-                                                  rs.getInt("maxMagCapacity") + "\n";
-                                                  size++;
+                               for (int i = 1; i <= columnsNumber; i++) {
+                                   if (i > 1) System.out.print("\t");
+                                   String columnValue = rs.getString(i);
+                                   Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                   //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                               }
+                               size++;
+
                            }
-                           jTextArea1.setText("Total Number of Groza's on the map:"+ size + "\nHere's the data: \n" +Output);
+                           jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
                        } catch (SQLException e) {
                            System.out.println(e.getMessage());
                        }
@@ -145,239 +452,277 @@ public class GUI extends javax.swing.JFrame {
                 	try (Connection conn = DriverManager.getConnection(url);
                             PreparedStatement pstmt  = conn.prepareStatement(Query)){
                             ResultSet rs  = pstmt.executeQuery(); 
-                            size =0;
-                            Output="";
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
                             // loop through the result set
                             while (rs.next()) {
-                                           Output= Output +
-                                                   rs.getString("name") +  "\t" + 
-                                                   rs.getString("type") + "\t" +
-                                                   rs.getInt("bulletSpeed") + "\t" +
-                                                   rs.getInt("fireRate") + "\t" +
-                                                   rs.getInt("damage") + "\t" +
-                                                   rs.getInt("currentMagCapacity") + "\t" +
-                                                   rs.getInt("maxMagCapacity") + "\n";
-                                                   size++;
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
                             }
-                            jTextArea1.setText("Total Number of AKM's on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
+                     
                 }
                 else if(Selected == "MedKit") {
                 	Query = "SELECT * Name FROM HEALING_ITEM WHERE Name = \"MedKit\"";
                 	try (Connection conn = DriverManager.getConnection(url);
                             PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();    
-                            size =0;
-                            Output="";
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
                             // loop through the result set
                             while (rs.next()) {
-                                //healing Item not in Create.java
-                                
-                                
-                                
-                                
-                                
-                                
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
                             }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                                
+                                
+                                
+            
                 	
                 
                 }
                 else if(Selected == "M416") {
-                	Query = "SELECT * Name FROM WEAPON WHERE Name =\"M416\"";
+                	Query = "SELECT * FROM WEAPON WHERE Name =\"M416\"";
                 	try (Connection conn = DriverManager.getConnection(url);
                             PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();
-                            size =0;
-                            Output="";
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
                             // loop through the result set
                             while (rs.next()) {
-                                           Output= Output +
-                                                   rs.getString("name") +  "\t" + 
-                                                   rs.getString("type") + "\t" +
-                                                   rs.getInt("bulletSpeed") + "\t" +
-                                                   rs.getInt("fireRate") + "\t" +
-                                                   rs.getInt("damage") + "\t" +
-                                                   rs.getInt("currentMagCapacity") + "\t" +
-                                                   rs.getInt("maxMagCapacity") + "\n";
-                                                   size++;
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
                             }
-                            jTextArea1.setText("Total Number of M416's on the map:"+ size + "\nHere's the data: \n" +Output);
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Smoke Grenade") {
+                	Query = "SELECT * FROM throwable WHERE name = \"Smoke Grenade\"";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Level 3 Helmet") {
+                	Query = "SELECT * FROM Armor WHERE name = \"Level 3 Helmet\"";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Pan") {
+                	Query = "SELECT FROM WHERE";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "4 Seats") {
+                	Query = "SELECT FROM WHERE";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Top speed of 70 Mph") {
+                	Query = "SELECT FROM WHERE";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "M4 ") {
+                	Query = "SELECT FROM WHERE";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "AKM ") {
+                	Query = "SELECT FROM WHERE";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Vehicles") {
+                	Query = "SELECT FROM WHERE";
+                	try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                }
+                                size++;
+
+                            }
+                            jTextArea1.setText("Total Number on the map:"+ size + "\nHere's the data: \n" +Output);
                         } catch (SQLException e) {
                             System.out.println(e.getMessage());
                         }
                 }
-                else if(Selected == "Smoke Grenade") {
-                	Query = "SELECT * FROM throwable WHERE name = \"Smoke Grenade\"";
-                	
-                	size =0;
-                    Output="";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            while (rs.next()) {
-                                Output= Output +
-                                        rs.getString("name") +  "\t" +
-                                        rs.getString("type") +  "\t" +
-                                        rs.getInt("damage") + "\t" +
-                                        rs.getInt("quantity") + "\t" +"\n";
-                                        size++;
-                            }
-                            jTextArea1.setText("Total Number of Smoke Grenades is: "+ size +"\nHere's The data:\n"+ Output);
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "Level 3 Helmet") {
-                	Query = "SELECT * FROM Armor WHERE name = \"Level 3 Helmet\"";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                Output = Output +
-                                        rs.getString("name") +  "\t" +
-                                        rs.getString("slot") +  "\t" +
-                                        rs.getInt("durability") + "\t" +
-                                        rs.getInt("rating") + "\t" +
-                                        rs.getInt("tier") + "\t" + "\n";
-                                
-                            }
-                            jTextArea1.setText("Total Number of level 3 helmets is: "+ size +"\nHere's The data:\n"+ Output);
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "Pan") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "4 Seats") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "Top speed of 70 Mph") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "M4 ") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "AKM ") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "Vehicles") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                else if(Selected == "") {
-                	Query = "SELECT FROM WHERE";
-                    try (Connection conn = DriverManager.getConnection(url);
-                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
-                            ResultSet rs  = pstmt.executeQuery();                   
-                            // loop through the result set
-                            size =0;
-                            Output="";
-                            while (rs.next()) {
-                                
-                            }
-                }catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                }
-                
-                
             }
+                     
+                
+                
+                
+                
+            
         });
 
         jLabel1.setText("Item you would like to know more about:");
