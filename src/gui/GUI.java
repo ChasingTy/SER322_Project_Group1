@@ -8,6 +8,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import main.Global;
+
 public class GUI extends javax.swing.JFrame {
 
     /**
@@ -810,7 +812,8 @@ public class GUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-     
+    	//Fill the lists
+    	Global.init();
         
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
