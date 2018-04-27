@@ -143,6 +143,15 @@
   "bulletSpeed": 350,
   "currentMagCapacity": 5
  },
+ "Dp-28": {
+  "damage": 49,
+  "fireRate": 600,
+  "maxMagCapacity": 47,
+  "name": "Dp-28",
+  "type": "Lightmachine Gun",
+  "bulletSpeed": 715,
+  "currentMagCapacity": 47
+ },
  "VSS": {
   "damage": 38,
   "fireRate": 698,
@@ -169,6 +178,15 @@
   "type": "Sniper Rifle",
   "bulletSpeed": 800,
   "currentMagCapacity": 10
+ },
+ "Winchester": {
+  "damage": 72,
+  "fireRate": 50,
+  "maxMagCapacity": 8,
+  "name": "Winchester",
+  "type": "Sniper Rifle",
+  "bulletSpeed": 760,
+  "currentMagCapacity": 8
  },
  "Vector": {
   "damage": 31,

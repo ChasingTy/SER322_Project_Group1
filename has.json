@@ -1,13 +1,26 @@
-{"ChinaNumba1": {
- "item": {
-  "quantity": 100,
-  "name": "5.56",
-  "type": "5.56"
+{
+ "DontPanMe": {
+  "item": {
+   "name": "Cropped Corset",
+   "slot": "Torso"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
  },
- "player": {
-  "gender": "Male",
-  "name": "ChinaNumba1",
-  "health": 100,
-  "energy": 0
+ "ChinaNumba1": {
+  "item": {
+   "name": "Zest Sunglasses",
+   "slot": "Eyes"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
  }
-}}
+}
