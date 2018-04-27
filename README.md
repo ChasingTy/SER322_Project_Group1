@@ -8,3 +8,5 @@ Nathan
 Anthony
 
 If running in Eclipse, make sure to add both jars in the lib folder to the build path.
+
+The main method is in GUI.java
