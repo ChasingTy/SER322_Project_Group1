@@ -12,6 +12,8 @@ import main.Global;
 
 public class GUI extends javax.swing.JFrame {
 
+	private static boolean firstTime = false; //change if need to repopulate json files
+	
     /**
      * Creates new form NewJFrame1
      */
@@ -813,7 +815,8 @@ public class GUI extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
     	//Fill the lists
-    	Global.init();
+    	if (firstTime)
+    		Global.init();
         
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
