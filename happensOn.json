@@ -5,8 +5,8 @@
    "server": "Server 2",
    "gameType": "Dou",
    "time": 10,
-   "numPlayer": 46,
-   "circlePos": 5
+   "circlePos": 5,
+   "numPlayers": 46
   },
   "map": {
    "size": 16,
@@ -19,8 +19,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "map": {
    "size": 64,
@@ -33,8 +33,8 @@
    "server": "Server 3",
    "gameType": "Solo",
    "time": 30,
-   "numPlayer": 3,
-   "circlePos": 10
+   "circlePos": 10,
+   "numPlayers": 3
   },
   "map": {
    "size": 64,

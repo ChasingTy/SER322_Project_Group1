@@ -4,8 +4,8 @@ import entities.Item;
 import entities.Player;
 
 public class Has {
-	private Item item;
-	private Player player;
+	private Item item = new Item();
+	private Player player = new Player();
 	
 	public Has() {
 	}

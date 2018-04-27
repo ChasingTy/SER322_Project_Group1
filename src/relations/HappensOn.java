@@ -4,8 +4,8 @@ import entities.Session;
 import entities.Map;
 
 public class HappensOn {
-	private Map map;
-	private Session session;
+	private Map map = new Map();
+	private Session session = new Session();
 	
 	public HappensOn() {
 	}

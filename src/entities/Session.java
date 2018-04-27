@@ -28,7 +28,7 @@ public class Session {
 		json.put("server", this.server);
 		json.put("gameType", this.gameType);
 		json.put("circlePos", this.circlePos);
-		json.put("numPlayer", this.numPlayers);
+		json.put("numPlayers", this.numPlayers);
 		json.put("time", this.time);
 		return json;
 	}

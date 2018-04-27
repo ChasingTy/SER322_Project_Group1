@@ -4,8 +4,8 @@ import entities.Vehicle;
 import entities.Map;
 
 public class SpawnsOnVehicle {
-	private Vehicle vehicle;
-	private Map map;
+	private Vehicle vehicle = new Vehicle();
+	private Map map = new Map();
 	
 	public SpawnsOnVehicle() {
 	}

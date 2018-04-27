@@ -4,8 +4,8 @@ import entities.Item;
 import entities.Map;
 
 public class SpawnsOnItem {
-	private Item item;
-	private Map map;
+	private Item item = new Item();
+	private Map map = new Map();
 	
 	public SpawnsOnItem() {
 	}

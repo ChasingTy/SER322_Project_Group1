@@ -4,8 +4,8 @@ import entities.Session;
 import entities.Player;
 
 public class PlaysIn {
-	private Player player;
-	private Session session;
+	private Player player = new Player();
+	private Session session = new Session();
 	
 	public PlaysIn() {
 	}

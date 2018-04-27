@@ -5,8 +5,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Male",
@@ -21,8 +21,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Female",
@@ -37,8 +37,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Female",
@@ -53,8 +53,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Male",
@@ -69,8 +69,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Male",
@@ -85,8 +85,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Male",
@@ -101,8 +101,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Female",
@@ -117,8 +117,8 @@
    "server": "Server 1",
    "gameType": "Squads",
    "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
+   "circlePos": 1,
+   "numPlayers": 90
   },
   "player": {
    "gender": "Male",
