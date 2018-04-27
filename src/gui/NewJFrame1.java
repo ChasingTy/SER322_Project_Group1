@@ -94,9 +94,62 @@ public class NewJFrame1 extends javax.swing.JFrame {
                 }
                 else if(Selected == "How many _____ Items Are there on the map.") {
                     QueryComboBox.removeAllItems();
-                    QueryComboBox.addItem("M4");
-                    QueryComboBox.addItem("AKM");
+                    QueryComboBox.addItem("M4 ");
+                    QueryComboBox.addItem("AKM ");
                     QueryComboBox.addItem("Vehicles");
+                }
+                
+                
+            }
+        });
+        QueryComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QueryComboBoxActionPerformed(evt);
+                String Selected = QueryComboBox.getSelectedItem().toString();
+                String Query;
+                if(Selected == "M4") {
+                	Query = "";
+                	
+                }
+                else if(Selected == "AKM") {
+                	Query = "SELECT COUNT Name FROM Weapon WHERE Name = \"M4\" ";
+                	
+                }
+                else if(Selected == "MedKit") {
+                	Query = "";
+                }
+                else if(Selected == "M16") {
+                	Query = "";
+                }
+                else if(Selected == "Smoke Grenade") {
+                	Query = "";
+                }
+                else if(Selected == "Level 3 Helmet") {
+                	Query = "";
+                }
+                else if(Selected == "Pan") {
+                	Query = "";
+                }
+                else if(Selected == "4 Seats") {
+                	Query = "";
+                }
+                else if(Selected == "Top speed of 70 Mph") {
+                	Query = "";
+                }
+                else if(Selected == "M4 ") {
+                	Query = "";
+                }
+                else if(Selected == "AKM ") {
+                	Query = "";
+                }
+                else if(Selected == "Vehicles") {
+                	Query = "";
+                }
+                else if(Selected == "") {
+                	Query = "";
+                }
+                else if(Selected == "") {
+                	Query = "";
                 }
                 
                 
@@ -171,6 +224,10 @@ public class NewJFrame1 extends javax.swing.JFrame {
     }//GEN-LAST:event_ViewComboBoxActionPerformed
 
     private void QueryItemComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QueryItemComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_QueryItemComboBoxActionPerformed
+    
+    private void QueryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QueryItemComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_QueryItemComboBoxActionPerformed
 
