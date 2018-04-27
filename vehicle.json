@@ -3,7 +3,7 @@
   "topSpeed": 50,
   "numSeats": 6,
   "name": "Bus",
-  "health": 100
+  "health": 25
  },
  "Dacia": {
   "topSpeed": 100,
