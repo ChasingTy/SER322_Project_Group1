@@ -28,6 +28,7 @@ public class Create {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
          
     }
     
@@ -38,8 +39,9 @@ public class Create {
                 Statement stmt = conn.createStatement()) {
             // create a new table
             
-            String sql = "CREATE TABLE IF NOT EXISTS ammo (\n"          //AMMO
-                    + " type text PRIMARY KEY,\n"
+            String sql = "CREATE TABLE IF NOT EXISTS ammo(\n"          //AMMO
+                    + " name text PRIMARY KEY,\n"
+                    + " type text NOT NULL,\n"
                     + " quantity integer NOT NULL\n"
                     + ");";
             stmt.execute(sql);
@@ -137,8 +139,8 @@ public class Create {
         }
     }
     
-    public Create() {
-        createNewDatabase("game.db");
+    public static void createDB() {
+        createNewDatabase("test.db");
         createNewTable();
       
     }

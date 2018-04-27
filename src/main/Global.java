@@ -370,5 +370,19 @@ public class Global {
 		Has has1 = new Has(ammo1, player1);
 		hasList.getList().add(has1);
 		hasList.exportJSON();
+		
+		Create.createDB();
+		InsertDB.insertAmmo(ammoList);
+		InsertDB.insertArmor(armorList);
+		InsertDB.insertBackpack(backpackList);
+		InsertDB.insertBooster(boosterList);
+		InsertDB.insertClothing(clothingList);
+		InsertDB.insertMap(mapList);
+		InsertDB.insertPlayer(playerList);
+		InsertDB.insertSession(sessionList);
+		InsertDB.insertStandard(standardList);
+		InsertDB.insertThrowable(throwAbleList);
+		InsertDB.insertVehicle(vehicleList);
+		InsertDB.insertWeapon(weaponList);
 	}
 }

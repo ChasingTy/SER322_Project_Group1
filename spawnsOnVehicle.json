@@ -5,10 +5,10 @@
    "name": "Miramar"
   },
   "vehicle": {
+   "topSpeed": 50,
    "numSeats": 25,
    "name": "Bus",
-   "health": 6,
-   "topSpeeds": 50
+   "health": 6
   }
  },
  "Dacia": {
@@ -17,10 +17,10 @@
    "name": "Erangel"
   },
   "vehicle": {
+   "topSpeed": 100,
    "numSeats": 75,
    "name": "Dacia",
-   "health": 4,
-   "topSpeeds": 100
+   "health": 4
   }
  },
  "Truck": {
@@ -29,10 +29,10 @@
    "name": "Miramar"
   },
   "vehicle": {
+   "topSpeed": 100,
    "numSeats": 40,
    "name": "Truck",
-   "health": 4,
-   "topSpeeds": 100
+   "health": 4
   }
  },
  "Bike": {
@@ -41,10 +41,10 @@
    "name": "Erangel"
   },
   "vehicle": {
+   "topSpeed": 150,
    "numSeats": 69,
    "name": "Bike",
-   "health": 2,
-   "topSpeeds": 150
+   "health": 2
   }
  },
  "Buggy": {
@@ -53,10 +53,10 @@
    "name": "Miramar"
   },
   "vehicle": {
+   "topSpeed": 100,
    "numSeats": 70,
    "name": "Buggy",
-   "health": 2,
-   "topSpeeds": 100
+   "health": 2
   }
  },
  "UAZ": {
@@ -65,10 +65,10 @@
    "name": "Erangel"
   },
   "vehicle": {
+   "topSpeed": 120,
    "numSeats": 50,
    "name": "UAZ",
-   "health": 4,
-   "topSpeeds": 120
+   "health": 4
   }
  }
 }
