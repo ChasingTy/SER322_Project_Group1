@@ -1,53 +1,5 @@
 {
- "Shroud": {
-  "session": {
-   "gameID": "Game 1",
-   "server": "Server 1",
-   "gameType": "Squads",
-   "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
-  },
-  "player": {
-   "gender": "Male",
-   "name": "Shroud",
-   "health": 100,
-   "energy": 100
-  }
- },
- "DontPanMe": {
-  "session": {
-   "gameID": "Game 1",
-   "server": "Server 1",
-   "gameType": "Squads",
-   "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
-  },
-  "player": {
-   "gender": "Female",
-   "name": "DontPanMe",
-   "health": 0,
-   "energy": 0
-  }
- },
- "Grill": {
-  "session": {
-   "gameID": "Game 1",
-   "server": "Server 1",
-   "gameType": "Squads",
-   "time": 1,
-   "numPlayer": 90,
-   "circlePos": 1
-  },
-  "player": {
-   "gender": "Female",
-   "name": "Grill",
-   "health": 80,
-   "energy": 10
-  }
- },
- "CrateChaser420": {
+ "PlaysIn 7": {
   "session": {
    "gameID": "Game 1",
    "server": "Server 1",
@@ -63,7 +15,7 @@
    "energy": 50
   }
  },
- "PochinkiIsMyCity": {
+ "PlaysIn 6": {
   "session": {
    "gameID": "Game 1",
    "server": "Server 1",
@@ -74,12 +26,12 @@
   },
   "player": {
    "gender": "Female",
-   "name": "PochinkiIsMyCity",
-   "health": 20,
-   "energy": 50
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
   }
  },
- "CaoNiMa": {
+ "PlaysIn 5": {
   "session": {
    "gameID": "Game 1",
    "server": "Server 1",
@@ -89,13 +41,13 @@
    "circlePos": 1
   },
   "player": {
-   "gender": "Male",
-   "name": "CaoNiMa",
-   "health": 75,
-   "energy": 0
+   "gender": "Female",
+   "name": "Grill",
+   "health": 80,
+   "energy": 10
   }
  },
- "DrDisrespect": {
+ "PlaysIn 4": {
   "session": {
    "gameID": "Game 1",
    "server": "Server 1",
@@ -111,7 +63,55 @@
    "energy": 50
   }
  },
- "ChinaNumba1": {
+ "PlaysIn 3": {
+  "session": {
+   "gameID": "Game 1",
+   "server": "Server 1",
+   "gameType": "Squads",
+   "time": 1,
+   "numPlayer": 90,
+   "circlePos": 1
+  },
+  "player": {
+   "gender": "Male",
+   "name": "Shroud",
+   "health": 100,
+   "energy": 100
+  }
+ },
+ "PlaysIn 2": {
+  "session": {
+   "gameID": "Game 1",
+   "server": "Server 1",
+   "gameType": "Squads",
+   "time": 1,
+   "numPlayer": 90,
+   "circlePos": 1
+  },
+  "player": {
+   "gender": "Male",
+   "name": "CaoNiMa",
+   "health": 75,
+   "energy": 0
+  }
+ },
+ "PlaysIn 1": {
+  "session": {
+   "gameID": "Game 1",
+   "server": "Server 1",
+   "gameType": "Squads",
+   "time": 1,
+   "numPlayer": 90,
+   "circlePos": 1
+  },
+  "player": {
+   "gender": "Female",
+   "name": "PochinkiIsMyCity",
+   "health": 20,
+   "energy": 50
+  }
+ },
+ "PlaysIn 0": {
   "session": {
    "gameID": "Game 1",
    "server": "Server 1",

@@ -1,5 +1,17 @@
 {
- "DontPanMe": {
+ "Has 24": {
+  "item": {
+   "name": "Punk Knuckle Gloves",
+   "slot": "Hands"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 25": {
   "item": {
    "name": "Cropped Corset",
    "slot": "Torso"
@@ -11,10 +23,330 @@
    "energy": 0
   }
  },
- "ChinaNumba1": {
+ "Has 20": {
+  "item": {
+   "quantity": 2,
+   "tier": 3,
+   "name": "Med Kit"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 21": {
+  "item": {
+   "name": "Energy Drink",
+   "health": 20,
+   "energy": 40
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 22": {
+  "item": {
+   "damage": 0,
+   "quantity": 1,
+   "name": "Smoke Grenade",
+   "type": "Tactical"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 23": {
+  "item": {
+   "name": "Camo Hotpants",
+   "slot": "Legs"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 13": {
+  "item": {
+   "damage": 35,
+   "fireRate": 545,
+   "maxMagCapacity": 15,
+   "name": "P1911",
+   "type": "Pistol",
+   "bulletSpeed": 250,
+   "currentMagCapacity": 7
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 14": {
+  "item": {
+   "damage": 49,
+   "fireRate": 600,
+   "maxMagCapacity": 47,
+   "name": "Dp-28",
+   "type": "Lightmachine Gun",
+   "bulletSpeed": 715,
+   "currentMagCapacity": 47
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 15": {
+  "item": {
+   "quantity": 420,
+   "name": ".45",
+   "type": ".45"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 16": {
+  "item": {
+   "tier": 3,
+   "durability": 230,
+   "name": "Spetsnaz Helmet",
+   "rating": 230,
+   "slot": "Head"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 17": {
+  "item": {
+   "tier": 3,
+   "durability": 250,
+   "name": "Military Vest",
+   "rating": 250,
+   "slot": "Chest"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 18": {
+  "item": {
+   "name": "Backpack",
+   "capacity": 200
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 19": {
+  "item": {
+   "quantity": 20,
+   "tier": 1,
+   "name": "Bandage"
+  },
+  "player": {
+   "gender": "Female",
+   "name": "DontPanMe",
+   "health": 0,
+   "energy": 0
+  }
+ },
+ "Has 2": {
+  "item": {
+   "quantity": 100,
+   "name": "5.56",
+   "type": "5.56"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 3": {
+  "item": {
+   "quantity": 30,
+   "name": "12 Gauge",
+   "type": "12 Gauge"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 4": {
+  "item": {
+   "tier": 1,
+   "durability": 80,
+   "name": "Motorcycle Helmet",
+   "rating": 80,
+   "slot": "Head"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 5": {
+  "item": {
+   "tier": 1,
+   "durability": 200,
+   "name": "Police Vest",
+   "rating": 200,
+   "slot": "Chest"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 10": {
+  "item": {
+   "name": "Coat",
+   "slot": "Outer"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 0": {
+  "item": {
+   "damage": 41,
+   "fireRate": 625,
+   "maxMagCapacity": 40,
+   "name": "SCAR-L",
+   "type": "Assault Rifle",
+   "bulletSpeed": 870,
+   "currentMagCapacity": 30
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 11": {
+  "item": {
+   "name": "Long Sleeved Turtleneck (Black)",
+   "slot": "Torso"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 1": {
+  "item": {
+   "damage": 22,
+   "fireRate": 240,
+   "maxMagCapacity": 10,
+   "name": "S12K",
+   "type": "Shotgun",
+   "bulletSpeed": 350,
+   "currentMagCapacity": 5
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 12": {
   "item": {
    "name": "Zest Sunglasses",
    "slot": "Eyes"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 6": {
+  "item": {
+   "name": "Backpack",
+   "capacity": 250
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 7": {
+  "item": {
+   "quantity": 1,
+   "tier": 3,
+   "name": "Med Kit"
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 8": {
+  "item": {
+   "name": "Adrenaline Syringe",
+   "health": 50,
+   "energy": 100
+  },
+  "player": {
+   "gender": "Male",
+   "name": "ChinaNumba1",
+   "health": 100,
+   "energy": 0
+  }
+ },
+ "Has 9": {
+  "item": {
+   "damage": 100,
+   "quantity": 3,
+   "name": "Frag Grenade",
+   "type": "Damage"
   },
   "player": {
    "gender": "Male",

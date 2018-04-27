@@ -37,7 +37,7 @@ public class HasList {
             JSONObject oneJson = new JSONObject();
             oneJson.put("item", list.get(i).getItem().toJSON());
             oneJson.put("player", list.get(i).getPlayer().toJSON());
-            groupJson.put(list.get(i).getPlayer().getName(), oneJson);
+            groupJson.put("Has " + i, oneJson);
         }
         
         PrintWriter out;

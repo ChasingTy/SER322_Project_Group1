@@ -37,7 +37,7 @@ public class PlaysInList {
             JSONObject oneJson = new JSONObject();
             oneJson.put("player", list.get(i).getPlayer().toJSON());
             oneJson.put("session", list.get(i).getSession().toJSON());
-            groupJson.put(list.get(i).getPlayer().getName(), oneJson);
+            groupJson.put("PlaysIn " + i, oneJson);
         }
         
         PrintWriter out;

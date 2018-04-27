@@ -1,41 +1,5 @@
 {
- "Bus": {
-  "map": {
-   "size": 64,
-   "name": "Miramar"
-  },
-  "vehicle": {
-   "topSpeed": 50,
-   "numSeats": 6,
-   "name": "Bus",
-   "health": 25
-  }
- },
- "Dacia": {
-  "map": {
-   "size": 64,
-   "name": "Erangel"
-  },
-  "vehicle": {
-   "topSpeed": 100,
-   "numSeats": 4,
-   "name": "Dacia",
-   "health": 75
-  }
- },
- "Truck": {
-  "map": {
-   "size": 64,
-   "name": "Miramar"
-  },
-  "vehicle": {
-   "topSpeed": 100,
-   "numSeats": 4,
-   "name": "Truck",
-   "health": 40
-  }
- },
- "Bike": {
+ "SpawnsOnVehicle 5": {
   "map": {
    "size": 64,
    "name": "Erangel"
@@ -47,19 +11,79 @@
    "health": 69
   }
  },
- "Buggy": {
+ "SpawnsOnVehicle 6": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "topSpeed": 50,
+   "numSeats": 6,
+   "name": "Bus",
+   "health": 100
+  }
+ },
+ "SpawnsOnVehicle 3": {
+  "map": {
+   "size": 64,
+   "name": "Erangel"
+  },
+  "vehicle": {
+   "topSpeed": 100,
+   "numSeats": 4,
+   "name": "Dacia",
+   "health": 75
+  }
+ },
+ "SpawnsOnVehicle 4": {
+  "map": {
+   "size": 64,
+   "name": "Erangel"
+  },
+  "vehicle": {
+   "topSpeed": 150,
+   "numSeats": 2,
+   "name": "Bike",
+   "health": 100
+  }
+ },
+ "SpawnsOnVehicle 9": {
   "map": {
    "size": 64,
    "name": "Miramar"
   },
   "vehicle": {
    "topSpeed": 100,
-   "numSeats": 2,
-   "name": "Buggy",
-   "health": 70
+   "numSeats": 4,
+   "name": "Truck",
+   "health": 40
   }
  },
- "UAZ": {
+ "SpawnsOnVehicle 7": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "topSpeed": 50,
+   "numSeats": 6,
+   "name": "Bus",
+   "health": 25
+  }
+ },
+ "SpawnsOnVehicle 8": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "topSpeed": 100,
+   "numSeats": 4,
+   "name": "Truck",
+   "health": 100
+  }
+ },
+ "SpawnsOnVehicle 1": {
   "map": {
    "size": 64,
    "name": "Erangel"
@@ -69,6 +93,54 @@
    "numSeats": 4,
    "name": "UAZ",
    "health": 50
+  }
+ },
+ "SpawnsOnVehicle 2": {
+  "map": {
+   "size": 64,
+   "name": "Erangel"
+  },
+  "vehicle": {
+   "topSpeed": 100,
+   "numSeats": 4,
+   "name": "Dacia",
+   "health": 100
+  }
+ },
+ "SpawnsOnVehicle 10": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "topSpeed": 100,
+   "numSeats": 2,
+   "name": "Buggy",
+   "health": 100
+  }
+ },
+ "SpawnsOnVehicle 0": {
+  "map": {
+   "size": 64,
+   "name": "Erangel"
+  },
+  "vehicle": {
+   "topSpeed": 120,
+   "numSeats": 4,
+   "name": "UAZ",
+   "health": 100
+  }
+ },
+ "SpawnsOnVehicle 11": {
+  "map": {
+   "size": 64,
+   "name": "Miramar"
+  },
+  "vehicle": {
+   "topSpeed": 100,
+   "numSeats": 2,
+   "name": "Buggy",
+   "health": 70
   }
  }
 }

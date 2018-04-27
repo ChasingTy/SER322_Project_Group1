@@ -37,7 +37,7 @@ public class SpawnsOnItemList {
             JSONObject oneJson = new JSONObject();
             oneJson.put("item", list.get(i).getItem().toJSON());
             oneJson.put("map", list.get(i).getMap().toJSON());
-            groupJson.put(list.get(i).getItem().getName(), oneJson);
+            groupJson.put("SpawnsOnItem " + i, oneJson);
         }
         
         PrintWriter out;

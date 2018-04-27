@@ -37,7 +37,7 @@ public class HappensOnList {
             JSONObject oneJson = new JSONObject();
             oneJson.put("map", list.get(i).getMap().toJSON());
             oneJson.put("session", list.get(i).getSession().toJSON());
-            groupJson.put(list.get(i).getSession().getGameID(), oneJson);
+            groupJson.put("HappensOn " + i, oneJson);
         }
         
         PrintWriter out;
