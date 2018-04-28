@@ -403,8 +403,10 @@ public class GUI extends javax.swing.JFrame {
                     QueryComboBox.addItem("Dacia");
                     QueryComboBox.addItem("M416");
                     QueryComboBox.addItem("Smoke Grenade");
-                    QueryComboBox.addItem("Level 3 Helmet");
+                    QueryComboBox.addItem("Spetsnaz Helmet");
                     QueryComboBox.addItem("Pan");
+                    QueryComboBox.addItem("S696");
+                    QueryComboBox.addItem("P92");
                 }
                 else if(Selected == "How many Vehicles have: ") {
                     
@@ -417,13 +419,14 @@ public class GUI extends javax.swing.JFrame {
                 else if(Selected == "What is the Bullet Speed of: ") {
 
                     QueryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
-                    //Spaces added so there are no duplicates
+                    
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("M4 ");
                     QueryComboBox.addItem("AKM ");
                     QueryComboBox.addItem("UMP9");
                     QueryComboBox.addItem("KAR98K");
                     QueryComboBox.addItem("P1911");
+         
                     
                 }
                 
@@ -438,8 +441,8 @@ public class GUI extends javax.swing.JFrame {
                 String Query;
                 String Output="";
                 int size = 0;
-                if(Selected == "GROZA") {
-                	Query = "SELECT * FROM WEAPON WHERE Name = \"GROZA\"";
+                if(Selected == "S696") {
+                	Query = "SELECT * FROM WEAPON WHERE Name = \"S696\"";
                 	try (Connection conn = DriverManager.getConnection(url);
                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
                            ResultSet rs  = pstmt.executeQuery(); 
@@ -461,6 +464,54 @@ public class GUI extends javax.swing.JFrame {
                            System.out.println(e.getMessage());
                        }
                 	
+                }
+                else if(Selected == "P92") {
+                    Query = "SELECT* FROM WEAPON WHERE Name = \"P92\"";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
+                            }
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "AKM") {
+                    Query = "SELECT* FROM WEAPON WHERE Name = \"AKM\"";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
+                            }
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
                 }
                 else if(Selected == "AKM") {
                 	Query = "SELECT* FROM WEAPON WHERE Name = \"AKM\"";
@@ -564,8 +615,8 @@ public class GUI extends javax.swing.JFrame {
                         }
                      
                 }
-                else if(Selected == "Level 3 Helmet") {
-                	Query = "SELECT * FROM Armor WHERE name = \"Level 3 Helmet\"";
+                else if(Selected == "Spetsnaz Helmet") {
+                	Query = "SELECT * FROM Armor WHERE name = \"Spetsnaz Helmet\"";
                 	try (Connection conn = DriverManager.getConnection(url);
                             PreparedStatement pstmt  = conn.prepareStatement(Query)){
                             ResultSet rs  = pstmt.executeQuery(); 
