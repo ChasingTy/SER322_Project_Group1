@@ -400,7 +400,7 @@ public class GUI extends javax.swing.JFrame {
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("GROZA");
                     QueryComboBox.addItem("AKM");
-                    QueryComboBox.addItem("MedKit");
+                    QueryComboBox.addItem("Dacia");
                     QueryComboBox.addItem("M416");
                     QueryComboBox.addItem("Smoke Grenade");
                     QueryComboBox.addItem("Level 3 Helmet");
@@ -412,7 +412,7 @@ public class GUI extends javax.swing.JFrame {
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("4 Seats");
                     QueryComboBox.addItem("Top speed of 70 Mph or more");
-                    QueryComboBox.addItem("");
+                    QueryComboBox.addItem("Have health greater than 50");
                 }
                 else if(Selected == "What is the Bullet Speed of: ") {
 
@@ -486,8 +486,8 @@ public class GUI extends javax.swing.JFrame {
                         }
                      
                 }
-                else if(Selected == "MedKit") {
-                	Query = "SELECT * Name FROM HEALING_ITEM WHERE Name = \"MedKit\"";
+                else if(Selected == "Dacia") {
+                	Query = "SELECT * FROM vehicle WHERE Name = \"Dacia\"";
                 	try (Connection conn = DriverManager.getConnection(url);
                             PreparedStatement pstmt  = conn.prepareStatement(Query)){
                             ResultSet rs  = pstmt.executeQuery(); 
@@ -656,6 +656,30 @@ public class GUI extends javax.swing.JFrame {
                                 size++;
                                 Output = Output+"\n";
 
+                            }
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Have health greater than 50") {
+                    Query = "SELECT * FROM vehicle WHERE health >= 50";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
                             }
                             jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
                         } catch (SQLException e) {
