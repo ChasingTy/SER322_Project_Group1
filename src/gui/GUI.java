@@ -8,6 +8,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JButton;
+
 import main.Global;
 
 public class GUI extends javax.swing.JFrame {
@@ -38,6 +40,7 @@ public class GUI extends javax.swing.JFrame {
         QueryComboBox = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        JButton reset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -392,7 +395,8 @@ public class GUI extends javax.swing.JFrame {
                 QueryItemComboBoxActionPerformed(evt);
                 String Selected = QueryItemComboBox.getSelectedItem().toString();
                 if(Selected == "How many _____ are in the system.") {
-                    QueryComboBox.removeAllItems();
+                    
+                    QueryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("GROZA");
                     QueryComboBox.addItem("AKM");
@@ -403,14 +407,16 @@ public class GUI extends javax.swing.JFrame {
                     QueryComboBox.addItem("Pan");
                 }
                 else if(Selected == "How many Vehicles have: ") {
-                    QueryComboBox.removeAllItems();
+                    
+                    QueryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("4 Seats");
                     QueryComboBox.addItem("Top speed of 70 Mph or more");
                     QueryComboBox.addItem("");
                 }
                 else if(Selected == "What is the Bullet Speed of: ") {
-                    QueryComboBox.removeAllItems();
+
+                    QueryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
                     //Spaces added so there are no duplicates
                     QueryComboBox.addItem(" ");
                     QueryComboBox.addItem("M4 ");
@@ -427,7 +433,8 @@ public class GUI extends javax.swing.JFrame {
         QueryComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QueryComboBoxActionPerformed(evt);
-                String Selected = QueryComboBox.getSelectedItem().toString();
+               
+                   String Selected = QueryComboBox.getSelectedItem().toString();
                 String Query;
                 String Output="";
                 int size = 0;
@@ -468,7 +475,7 @@ public class GUI extends javax.swing.JFrame {
                                     if (i > 1) System.out.print("\t");
                                     String columnValue = rs.getString(i);
                                     Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
-                                    //System.out.print(rsmd.getColumnName(i)+ ": " + columnValue + "");
+                                    
                                 }
                                 size++;
                                 Output = Output+"\n";
@@ -824,6 +831,7 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(QueryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -912,24 +920,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
     
-    
-    
-    public static void init() {
-        ViewComboBox.addItem("Player");
-        ViewComboBox.addItem("Session");
-        ViewComboBox.addItem("Map");
-        ViewComboBox.addItem("Vehicle");
-        ViewComboBox.addItem("Item");
-        ViewComboBox.addItem("Clothing");
-        ViewComboBox.addItem("Throwable");
-        ViewComboBox.addItem("Weapon");
-        ViewComboBox.addItem("Armor");
-        ViewComboBox.addItem("Ammo");
-        ViewComboBox.addItem("Standard");
-        ViewComboBox.addItem("Booster");
-        ViewComboBox.addItem("Healing Item");
-        ViewComboBox.addItem("Backpack");
-        //"Player","Session","Map","Vehicle","Item","Clothing","Throwable","Weapon","Armor","Ammo","Standard","Booster","Healing Item","BackPack"
-    }
+
     
 }
