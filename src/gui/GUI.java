@@ -389,7 +389,7 @@ public class GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("View", jPanel1);
 
-        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Item", "How many _____ are in the system.","How many Vehicles have: ","What is the Bullet Speed of: "}));
+        QueryItemComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Item", "How many _____ are in the system.","How many Vehicles have: ","What is the Bullet Speed of: ","How Many Players: "}));
         QueryItemComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QueryItemComboBoxActionPerformed(evt);
@@ -407,6 +407,14 @@ public class GUI extends javax.swing.JFrame {
                     QueryComboBox.addItem("Pan");
                     QueryComboBox.addItem("S696");
                     QueryComboBox.addItem("P92");
+                }
+                else if(Selected == "How Many Players: ") {
+                   QueryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
+                   QueryComboBox.addItem(" ");
+                   QueryComboBox.addItem("Are alive");
+                   QueryComboBox.addItem("Are dead");
+                   QueryComboBox.addItem("Are male");
+                   QueryComboBox.addItem("Are female");
                 }
                 else if(Selected == "How many Vehicles have: ") {
                     
@@ -464,6 +472,102 @@ public class GUI extends javax.swing.JFrame {
                            System.out.println(e.getMessage());
                        }
                 	
+                }
+                else if(Selected == "Are dead") {
+                    Query = "SELECT* FROM player WHERE health = 0";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
+                            }
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Are male") {
+                    Query = "SELECT * FROM player WHERE gender = \"Male\"";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
+                            }
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Are female") {
+                    Query = "SELECT * FROM player WHERE gender = \"Female\"";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
+                            }
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
+                }
+                else if(Selected == "Are alive") {
+                    Query = "SELECT* FROM player WHERE health > 0";
+                    try (Connection conn = DriverManager.getConnection(url);
+                            PreparedStatement pstmt  = conn.prepareStatement(Query)){
+                            ResultSet rs  = pstmt.executeQuery(); 
+                            ResultSetMetaData rsmd = rs.getMetaData();
+                            int columnsNumber = rsmd.getColumnCount();
+                            // loop through the result set
+                            while (rs.next()) {
+                                for (int i = 1; i <= columnsNumber; i++) {
+                                    if (i > 1) System.out.print("\t");
+                                    String columnValue = rs.getString(i);
+                                    Output = Output +rsmd.getColumnName(i)+ ": " + columnValue + "     ";
+                                    
+                                }
+                                size++;
+                                Output = Output+"\n";
+                            }
+                            jTextArea1.setText("Total Number in the system:"+ size + "\nHere's the data: \n" +Output+"\n");
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
+                     
                 }
                 else if(Selected == "P92") {
                     Query = "SELECT* FROM WEAPON WHERE Name = \"P92\"";
